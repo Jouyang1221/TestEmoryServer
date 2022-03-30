@@ -10,6 +10,7 @@ import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
 import ChatScreen from "./screens/ChatScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import ItemScreen from "./screens/ItemScreen";
+import HeaderSignedIn from "./components/HeaderSignedIn";
 
 // function App() {
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
             <Header />
             <main>
               <Container>
-                <h1>Welcome To Death to Barnes and Nobles</h1>
+                <h1>Welcome To Emory Exchange</h1>
                 <HomeScreen />
               </Container>
             </main>
@@ -31,7 +32,7 @@ const App = () => {
         }
       ></Route>
       <Route
-        path="/items"
+        path="/product/:id"
         element={
           <>
             <Header />

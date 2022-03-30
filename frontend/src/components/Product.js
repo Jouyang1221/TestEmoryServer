@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
+import "./ProfilePage/ProfilePage.css";
 
 const Product = ({ product }) => {
   return (
-    <Card className="my-2 p-2">
+    <Card className="my-2 p-2 card-size">
       <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image} variant="top" />
+        <Card.Img className="photo" src={product.image} variant="top" />
       </Link>
       <Card.Body>
         <Link to={`/product/${product._id}`}>
