@@ -34,20 +34,28 @@ const ItemPage = () => {
           <b>Tags: </b>
         </h5>
         <button className="rounded-pill btn btn-warning btn-sm m-1">
-          <b>CS 253</b>
+          <b>{product.course}</b>
         </button>
         <button className="rounded-pill btn btn-warning btn-sm m-1">
-          Computer Science
+          {product.category}
         </button>
         <button className="rounded-pill btn btn-warning btn-sm m-1">
-          Fair
+          {product.condition}
         </button>
       </div>
+      <p></p>
       <h5 className="txt-left w-75">
-        <b>Description: </b>
-        {product.description}
+        <p>
+          <b>ISBN: </b>
+          {product.isbn}
+        </p>
+        <p>
+          <b>Description: </b>
+          {product.description}
+        </p>
       </h5>
-      <Container fluid>
+
+      <Container>
         <Row className="item-bar">
           <Col className="bar-col1">
             <img
@@ -57,12 +65,10 @@ const ItemPage = () => {
               style={{ maxWidth: "75px" }}
             />
             <h5 className="ml-2">
-              <b>
-                <u>First Name Last Name</u>
-              </b>
+              <b> {product.seller}</b>
             </h5>
           </Col>
-          <Col className="bar-col1">
+          <Col className="bar-col2">
             <h3 className="m-5">
               <b>${product.price}</b>
             </h3>

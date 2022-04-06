@@ -1,0 +1,28 @@
+.center-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-size {
+  width: 260px;
+  height: 400px;
+}
+.photo {
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 250px;
+}
+.seller-link {
+  color: rgb(66, 56, 107);
+}
+.space {
+  justify-content: "space-between";
+}
+.text {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

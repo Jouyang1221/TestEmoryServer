@@ -1,9 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import "../ProfilePage.css";
+import { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
 
-const Product = ({ product }) => {
+const Product = ({ productNumber }) => {
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchproduct = async () => {
+      const { data } = await axios.get(`/api/products/${productNumber}`);
+      setProduct(data);
+    };
+    fetchproduct();
+  }, []);
+
   return (
     <div clasName="wrapper row w-75">
       <Card className="my-2 p-2 ">
@@ -18,16 +30,6 @@ const Product = ({ product }) => {
             </Link>
           </div>
 
-          {/* <Card.Body>
-        <Link to={`/product/${product._id}`}>
-          <strong>{product.name}</strong>
-        </Link>
-        <Card.Text as="div" className="my-3">
-          <div>Seller Rating: {product.rating}</div>
-          <div>{product.numReviews} reviews</div>
-        </Card.Text>
-        <Card.Text>${product.price}</Card.Text>
-      </Card.Body> */}
           <div className="col-sm-6">
             <h4>
               <Link to={`/product/${product._id}`}>
@@ -36,24 +38,28 @@ const Product = ({ product }) => {
             </h4>
             <br></br>
 
-            <Card.Text>Author: {product.Author}</Card.Text>
-            <Card.Text>ISBN: {product.ISBN}</Card.Text>
-            <Card.Text>Description: {product.description}</Card.Text>
+            <Card.Text>
+              <strong>Author:</strong> {product.author}
+            </Card.Text>
+            <Card.Text>
+              <strong>ISBN:</strong> {product.isbn}
+            </Card.Text>
+            <Card.Text>
+              <strong>Description:</strong> {product.description}
+            </Card.Text>
             <div className="tags" style={{}}>
-              <h5 className="txt-left m-1">
-                <b>Tags: </b>
-              </h5>
               <button className="rounded-pill btn btn-warning btn-sm m-1">
-                <b>CS 253</b>
+                <b>{product.category}</b>
               </button>
               <button className="rounded-pill btn btn-warning btn-sm m-1">
-                Computer Science
+                {product.course}
               </button>
               <button className="rounded-pill btn btn-warning btn-sm m-1">
-                Fair
+                {product.condition}
               </button>
             </div>
           </div>
+
           <div className="col-sm-2">
             <Card.Title>${product.price}</Card.Title>
           </div>

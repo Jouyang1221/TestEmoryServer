@@ -5,7 +5,6 @@ import ItemPage from "../components/ItemPage/ItemPage";
 const ItemScreen = () => {
   return (
     <>
-      <h2>Item Screen</h2>
       <ItemPage />
     </>
   );
