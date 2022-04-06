@@ -3,16 +3,6 @@ import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import "./Product.css";
 
-var getInitials = function (string) {
-  var names = string.split(" "),
-    initials = names[0] + " ";
-
-  if (names.length > 1) {
-    initials += names[names.length - 1].substring(0, 1).toUpperCase();
-  }
-  return initials + ".";
-};
-
 const Product = ({ product }) => {
   return (
     <Card className="my-2 p-2 card-siz">
@@ -40,7 +30,7 @@ const Product = ({ product }) => {
                 title={product.seller}
                 to={`/${product.seller}`}
               >
-                <h6>{getInitials(product.seller)}</h6>
+                <h6>{product.seller}</h6>
               </Link>
             </div>
             <div className="col-sm-5">

@@ -20,7 +20,7 @@ const ProfilePage = () => {
     };
     fetchuser();
   }, []);
-  var check = Array.isArray(users.listing);
+
   return (
     <>
       <div className="div-wrapper2">

@@ -4,7 +4,7 @@ const users = [
   {
     _id: 624376609359,
     username: "jouyan8",
-    image: "/images/sedgewick.png",
+    image: "/images/cat1.jpeg",
     name: "James Ouyang",
     email: "jouyan8@emory.edu",
     phone: "111-111-1111",
@@ -19,7 +19,7 @@ const users = [
   {
     _id: 62437660933,
     username: "dtopchyan9",
-    image: "/images/sedgewick.png",
+    image: "/images/cat2.jpeg",
     name: "David Topchyan",
     email: "dtopchyan9@emory.edu",
     phone: "222-222-2222",
@@ -34,7 +34,7 @@ const users = [
   {
     _id: 62437660935,
     username: "kzhou2",
-    image: "/images/sedgewick.png",
+    image: "/images/cat3.jpeg",
     name: "Kaiwen Zhou",
     email: "kzhou2@emory.edu",
     phone: "444-444-4444",
@@ -49,7 +49,7 @@ const users = [
   {
     _id: 62437660934,
     username: "jwang1",
-    image: "/images/sedgewick.png",
+    image: "/images/cat4.jpeg",
     name: "Jackson Wang",
     email: "jwang1@emory.edu",
     phone: "555-555-5555",
@@ -64,7 +64,7 @@ const users = [
   {
     _id: 62437660935,
     username: "kseo12",
-    image: "/images/sedgewick.png",
+    image: "/images/cat5.jpeg",
     name: "Kevin Seo",
     email: "kseo12@emory.edu",
     phone: "000-000-0000",
@@ -79,7 +79,7 @@ const users = [
   {
     _id: 62437660937,
     username: "jperez12",
-    image: "/images/sedgewick.png",
+    image: "/images/cat6.jpeg",
     name: "Jesenia Perez",
     email: "jperez12@emory.edu",
     phone: "888-888-8888",
@@ -94,7 +94,7 @@ const users = [
   {
     _id: 62437660936,
     username: "jchoi22",
-    image: "/images/sedgewick.png",
+    image: "/images/cat7.jpeg",
     name: "Jason Choi",
     email: "jchoi22@emory.edu",
     phone: "777-777-7777",
@@ -110,7 +110,7 @@ const users = [
   {
     _id: 62437660912,
     username: "jryan8",
-    image: "/images/sedgewick.png",
+    image: "/images/cat8.jpeg",
     name: "Jack Ryan",
     email: "jryan8@emory.edu",
     phone: "333-333-3333",
@@ -125,7 +125,7 @@ const users = [
   {
     _id: 62437660910,
     username: "bmandell2",
-    image: "/images/sedgewick.png",
+    image: "/images/cat9.jpeg",
     name: "Blake Mandell",
     email: "bmandell2@emory.edu",
     phone: "999-999-9999",

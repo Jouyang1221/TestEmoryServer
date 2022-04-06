@@ -1,84 +1,102 @@
 import axios from "axios";
-import React, { Component } from "react";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { Row, Col, Button } from "react-bootstrap";
 import "./itempage.css";
+import ProfilePic from "./ItemPageProfilePic";
 
 const ItemPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  const [sellers, setSeller] = useState("");
 
   useEffect(() => {
     const fetchproduct = async () => {
       const { data } = await axios.get(`/api/products/${Number(id)}`);
       setProduct(data);
+      setSeller(data.seller);
     };
     fetchproduct();
   }, []);
-  return (
-    <div className="item-wrapper" style={{}}>
-      <div className="img-wrapper">
-        <img
-          src={product.image}
-          className="rounded pt-2 pb-2"
-          alt="..."
-          style={{ maxWidth: "21.9rem" }}
-        />
-      </div>
-      <h1 className="txt-left w-75">{product.name}</h1>
-      <div className="tags" style={{}}>
-        <h5 className="txt-left m-1">
-          <b>Tags: </b>
-        </h5>
-        <button className="rounded-pill btn btn-warning btn-sm m-1">
-          <b>{product.course}</b>
-        </button>
-        <button className="rounded-pill btn btn-warning btn-sm m-1">
-          {product.category}
-        </button>
-        <button className="rounded-pill btn btn-warning btn-sm m-1">
-          {product.condition}
-        </button>
-      </div>
-      <p></p>
-      <h5 className="txt-left w-75">
-        <p>
-          <b>ISBN: </b>
-          {product.isbn}
-        </p>
-        <p>
-          <b>Description: </b>
-          {product.description}
-        </p>
-      </h5>
 
-      <Container>
-        <Row className="item-bar">
-          <Col className="bar-col1">
-            <img
-              src="https://www.kindpng.com/picc/m/171-1712282_profile-icon-png-profile-icon-vector-png-transparent.png"
-              className="rounded pt-2 pb-2 mr-2"
-              alt="..."
-              style={{ maxWidth: "75px" }}
-            />
-            <h5 className="ml-2">
-              <b> {product.seller}</b>
+  return (
+    <>
+      <div className="item-wrapper card" style={{}}>
+        <br></br>
+        <div className="img-wrapper">
+          <img
+            src={product.image}
+            className="rounded pt-2 pb-2"
+            alt="..."
+            style={{ maxWidth: "21.9rem" }}
+          />
+        </div>
+        <h1 className="txt-left w-75 card-header">{product.name}</h1>
+        <div className="tags w-75 card-body" style={{}}>
+          <h4 className="txt-left ">
+            <b>Tags: </b>
+          </h4>
+          <button className="rounded-pill btn btn-warning btn-m mx-1">
+            <b>{product.course}</b>
+          </button>
+          <button className="rounded-pill btn btn-warning btn-m mx-1">
+            {product.category}
+          </button>
+          <button className="rounded-pill btn btn-warning btn-m mx-1">
+            {product.condition}
+          </button>
+        </div>
+
+        <ul className="list-group list-group-flush txt-left w-75 card-body">
+          <li className="list-group-item">
+            <h5>
+              <b>Author: </b>
+              {product.author}
             </h5>
-          </Col>
-          <Col className="bar-col2">
-            <h3 className="m-5">
-              <b>${product.price}</b>
-            </h3>
-            <Button variant="primary" size="lg">
-              Chat
-            </Button>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+          </li>
+          <li className="list-group-item">
+            <h5>
+              <b>ISBN: </b>
+              {product.isbn}
+            </h5>
+          </li>
+          <li className="list-group-item">
+            <h5>
+              <b>Description: </b>
+              {product.description}
+            </h5>
+          </li>
+        </ul>
+        <Container className="w-75">
+          <Row className="item-bar card-body">
+            <Col className="bar-col1">
+              <ProfilePic username={sellers} />
+
+              <Link
+                className=" card-subtitle text seller-link"
+                title={product.seller}
+                to={`/${product.seller}`}
+              >
+                <h5 className="mx-2">
+                  <b> {sellers}</b>
+                </h5>
+              </Link>
+            </Col>
+            <Col className="bar-col1">
+              <h3 className="m-5">
+                <b>${Number(product.price).toFixed(2)}</b>
+              </h3>
+              <Button variant="primary" size="lg">
+                Chat
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </>
   );
 };
 
