@@ -1,16 +1,14 @@
 const products = [
   {
-    _id: "1",
     name: "Anthropolgy: What Does it Mean to Be Human?",
     image: "/images/anthro.jpg",
     description: "Some markings on it, overall good",
     category: "Anthropology",
-    price: 20.00,
+    price: 20.0,
     rating: 4.1,
     numReviews: 12,
   },
   {
-    _id: "2",
     name: "Algorithms fourth edition by Robert Sedgewick, Kevin Wayne",
     image: "/images/sedgewick.png",
     description: "Textbook for cs253",
@@ -20,7 +18,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: "3",
     name: "Campbell Biology",
     image: "/images/biology.jpg",
     description: "Never used it",
@@ -28,10 +25,8 @@ const products = [
     price: 30.99,
     rating: 3.4,
     numReviews: 15,
-
   },
   {
-    _id: "4",
     name: "Calculus: Early Transcendentals 8th ed.",
     image: "/images/calculus.jpg",
     description: "big book",
@@ -41,7 +36,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: "5",
     name: "Chemistry: Structure and Properties",
     image: "/images/chemistry.jpg",
     description: "okay book",
@@ -51,7 +45,6 @@ const products = [
     numReviews: 9,
   },
   {
-    _id: "6",
     name: "Microeconomics 13th ed.",
     image: "/images/econ.jpg",
     description: "never used",
@@ -61,7 +54,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: "7",
     name: "College Physics 10th ed.",
     image: "/images/physics.jpg",
     description: "some writing on it",
@@ -71,17 +63,15 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: "8",
     name: "Culture and Psychology, 7th ed. ",
     image: "/images/psych.jpg",
     description: "nice book",
     category: "Psychology",
-    price: 18.00,
+    price: 18.0,
     rating: 5.0,
     numReviews: 3,
   },
   {
-    _id: "9",
     name: "Sociology: The Study of Human Relationships",
     image: "/images/sociology.jpg",
     description: "in good condition!",
@@ -91,12 +81,11 @@ const products = [
     numReviews: 11,
   },
   {
-    _id: "10",
     name: "This Bridge Called My Back, Fourth Edition: Writings by Radical Women of Color",
     image: "/images/thisbridge.jpg",
     description: "Great read",
     category: "Comparative Literature",
-    price: 15.00,
+    price: 15.0,
     rating: 4.0,
     numReviews: 5,
   },
