@@ -1,3 +1,5 @@
+import bcrypt from "bcryptjs";
+
 const users = [
   {
     _id: 624376609359,
@@ -11,7 +13,7 @@ const users = [
     year: 2023,
     rating: 4,
     reviews: 3,
-    password: "password",
+    password: bcrypt.hashSync("123456", 10),
     listings: [2],
   },
   {
@@ -26,7 +28,7 @@ const users = [
     year: 2023,
     rating: 5,
     reviews: 3,
-    password: "password",
+    password: bcrypt.hashSync("123456", 10),
     listings: [1],
   },
   {
@@ -41,7 +43,7 @@ const users = [
     year: 2023,
     rating: 5,
     reviews: 10,
-    password: "password",
+    password: bcrypt.hashSync("123456", 10),
     listings: [3],
   },
   {
@@ -56,7 +58,7 @@ const users = [
     year: 2023,
     rating: 2,
     reviews: 3,
-    password: "password",
+    password: bcrypt.hashSync("123456", 10),
     listings: [4],
   },
   {
@@ -71,7 +73,7 @@ const users = [
     year: 2023,
     rating: 5,
     reviews: 2,
-    password: "password",
+    password: bcrypt.hashSync("123456", 10),
     listings: [6, 8],
   },
   {
@@ -86,7 +88,7 @@ const users = [
     year: 2023,
     rating: 5,
     reviews: 3,
-    password: "password",
+    password: bcrypt.hashSync("123456", 10),
     listings: [7],
   },
   {
@@ -101,7 +103,7 @@ const users = [
     year: 2024,
     rating: 2.6,
     reviews: 3,
-    password: "password",
+    password: bcrypt.hashSync("123456", 10),
     listings: [9],
   },
 
@@ -117,7 +119,7 @@ const users = [
     year: 2022,
     rating: 5,
     reviews: 3,
-    password: "password",
+    password: bcrypt.hashSync("123456", 10),
     listings: [10],
   },
   {
@@ -132,8 +134,9 @@ const users = [
     year: 2026,
     rating: 5,
     reviews: 8,
-    password: "password",
+    password: bcrypt.hashSync("123456", 10),
     listings: [5],
   },
 ];
+
 export default users;

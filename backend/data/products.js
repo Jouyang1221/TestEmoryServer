@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: "1",
     name: "Anthropolgy: What Does it Mean to Be Human?",
     image: "/images/anthro.jpg",
     description: "Some markings on it, overall good",
@@ -26,7 +25,6 @@ const products = [
     author: "Robert Sedgewick, Kevin Wayne",
   },
   {
-    _id: "3",
     name: "Campbell Biology",
     image: "/images/biology.jpg",
     description: "Never used it",
@@ -39,7 +37,6 @@ const products = [
     author: "Lisa Urry ",
   },
   {
-    _id: "4",
     name: "Calculus: Early Transcendentals 8th ed.",
     image: "/images/calculus.jpg",
     description: "big book",
@@ -52,7 +49,6 @@ const products = [
     author: "James Stewart",
   },
   {
-    _id: "5",
     name: "Chemistry: Structure and Properties",
     image: "/images/chemistry.jpg",
     description: "okay book",
@@ -65,7 +61,6 @@ const products = [
     author: "Nivaldo Tro",
   },
   {
-    _id: "6",
     name: "Microeconomics 13th ed.",
     image: "/images/econ.jpg",
     description: "never used",
@@ -78,7 +73,6 @@ const products = [
     author: "Michael Parkin",
   },
   {
-    _id: "7",
     name: "College Physics 10th ed.",
     image: "/images/physics.jpg",
     description: "some writing on it",
@@ -91,7 +85,6 @@ const products = [
     author: "Hugh D. Young",
   },
   {
-    _id: "8",
     name: "Culture and Psychology, 7th ed. ",
     image: "/images/psych.jpg",
     description: "nice book",
@@ -104,7 +97,6 @@ const products = [
     author: "Paul B. Pedersen",
   },
   {
-    _id: "9",
     name: "Sociology: The Study of Human Relationships",
     image: "/images/sociology.jpg",
     description: "in good condition!",
@@ -117,7 +109,6 @@ const products = [
     author: "W. LaVerne Thomas",
   },
   {
-    _id: "10",
     name: "This Bridge Called My Back, Fourth Edition: Writings by Radical Women of Color",
     image: "/images/thisbridge.jpg",
     description: "Great read",

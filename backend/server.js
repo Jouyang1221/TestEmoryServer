@@ -1,8 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
-import products from "./data/products.js";
-import users from "./data/users.js";
+
+import productRoutes from "./routes/productRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
@@ -10,17 +12,35 @@ connectDB();
 
 const app = express();
 
+// Allows body to accept json data
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Hi  ");
 });
 
-app.get("/api/products", (req, res) => {
-  res.json(products);
-});
+app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
 
-app.get("/api/products/:id", (req, res) => {
-  const product = products.find((p) => p._id === req.params.id);
-  res.json(product);
+app.use(notFound);
+
+app.use(errorHandler);
+
+app.post("/register", async (req, resp) => {
+  try {
+    const user = new User(req.body);
+    let result = await user.save();
+    result = result.toObject();
+    if (result) {
+      delete result.password;
+      resp.send(req.body);
+      console.log(result);
+    } else {
+      console.log("User already register");
+    }
+  } catch (e) {
+    resp.send("Something Went Wrong");
+  }
 });
 
 app.get("/api/users", (req, res) => {
