@@ -2,7 +2,7 @@ import bcrypt from "bcryptjs";
 
 const users = [
   {
-    _id: 624376609359,
+    // _id: 1,
     username: "jouyan8",
     image: "/images/cat1.jpeg",
     name: "James Ouyang",
@@ -14,10 +14,10 @@ const users = [
     rating: 4,
     reviews: 3,
     password: bcrypt.hashSync("123456", 10),
-    listings: [2],
+    listings: 2,
   },
   {
-    _id: 62437660933,
+    // _id: 2,
     username: "dtopchyan9",
     image: "/images/cat2.jpeg",
     name: "David Topchyan",
@@ -29,10 +29,10 @@ const users = [
     rating: 5,
     reviews: 3,
     password: bcrypt.hashSync("123456", 10),
-    listings: [1],
+    listings: 1,
   },
   {
-    _id: 62437660935,
+    // _id: 3,
     username: "kzhou2",
     image: "/images/cat3.jpeg",
     name: "Kaiwen Zhou",
@@ -44,10 +44,10 @@ const users = [
     rating: 5,
     reviews: 10,
     password: bcrypt.hashSync("123456", 10),
-    listings: [3],
+    listings: 3,
   },
   {
-    _id: 62437660934,
+    // _id: 4,
     username: "jwang1",
     image: "/images/cat4.jpeg",
     name: "Jackson Wang",
@@ -59,10 +59,10 @@ const users = [
     rating: 2,
     reviews: 3,
     password: bcrypt.hashSync("123456", 10),
-    listings: [4],
+    listings: 4,
   },
   {
-    _id: 62437660935,
+    // _id: 5,
     username: "kseo12",
     image: "/images/cat5.jpeg",
     name: "Kevin Seo",
@@ -74,10 +74,10 @@ const users = [
     rating: 5,
     reviews: 2,
     password: bcrypt.hashSync("123456", 10),
-    listings: [6, 8],
+    listings: 6,
   },
   {
-    _id: 62437660937,
+    // _id: 6,
     username: "jperez12",
     image: "/images/cat6.jpeg",
     name: "Jesenia Perez",
@@ -89,10 +89,10 @@ const users = [
     rating: 5,
     reviews: 3,
     password: bcrypt.hashSync("123456", 10),
-    listings: [7],
+    listings: 7,
   },
   {
-    _id: 62437660936,
+    // _id: 7,
     username: "jchoi22",
     image: "/images/cat7.jpeg",
     name: "Jason Choi",
@@ -104,11 +104,11 @@ const users = [
     rating: 2.6,
     reviews: 3,
     password: bcrypt.hashSync("123456", 10),
-    listings: [9],
+    listings: 18,
   },
 
   {
-    _id: 62437660912,
+    // _id: 8,
     username: "jryan8",
     image: "/images/cat8.jpeg",
     name: "Jack Ryan",
@@ -120,10 +120,10 @@ const users = [
     rating: 5,
     reviews: 3,
     password: bcrypt.hashSync("123456", 10),
-    listings: [10],
+    listings: 62,
   },
   {
-    _id: 62437660910,
+    // _id: 9,
     username: "bmandell2",
     image: "/images/cat9.jpeg",
     name: "Blake Mandell",
@@ -135,7 +135,7 @@ const users = [
     rating: 5,
     reviews: 8,
     password: bcrypt.hashSync("123456", 10),
-    listings: [5],
+    listings: 3,
   },
 ];
 

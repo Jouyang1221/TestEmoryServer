@@ -31,29 +31,39 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    category: {
-      type: String,
-      required: true,
-    },
     description: {
       type: String,
       required: true,
     },
-    reviews: [reviewSchema],
-    rating: {
-      type: Number,
+    category: {
+      type: String,
       required: true,
-      default: 0,
     },
+    reviews: [reviewSchema],
     price: {
       type: Number,
       required: true,
       default: 0,
     },
-    countInStock: {
+    condition: {
+      type: String,
+      required: true,
+    },
+    isbn: {
       type: Number,
       required: true,
-      default: 0,
+    },
+    seller: {
+      type: String,
+      required: true,
+    },
+    course: {
+      type: String,
+      required: true,
+    },
+    author: {
+      type: String,
+      required: true,
     },
   },
   {
