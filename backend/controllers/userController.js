@@ -20,4 +20,20 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-export { authUser };
+const getUserList = asyncHandler(async (req, res) => {
+  const users = await User.find({});
+  res.json(users);
+});
+
+const getUserListByUsername = asyncHandler(async (req, res) => {
+  const user = await User.find({ username: req.params.username }).exec();
+
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(404);
+    throw new Error("Product not found");
+  }
+});
+
+export { authUser, getUserList, getUserListByUsername };
