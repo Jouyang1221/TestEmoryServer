@@ -43,14 +43,14 @@ app.post("/register", async (req, resp) => {
   }
 });
 
-app.get("/api/users", (req, res) => {
-  res.json(users);
-});
+// app.get("/api/users", (req, res) => {
+//   res.json(users);
+// });
 
-app.get("/api/users/:username", (req, res) => {
-  const user = users.find((u) => u.username === req.params.username);
-  res.json(user);
-});
+// app.get("/api/users/:username", (req, res) => {
+//   const user = users.find((u) => u.username === req.params.username);
+//   res.json(user);
+// });
 
 const PORT = process.env.PORT || 3001;
 
