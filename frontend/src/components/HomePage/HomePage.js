@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Container } from "react-bootstrap";
-import InputGroup from 'react-bootstrap/InputGroup'; 
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';  
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
 import Product from "../ProductLayouts/Product";
 // import products from "../products";
 import axios from "axios";
@@ -22,20 +22,30 @@ const HomePage = () => {
     <div className="">
       <div className="col-12 d-flex align-items-center">
         <InputGroup className="mb-2">
-            <FormControl
-            className = "rounded-pill"
+          <FormControl
+            className="rounded-pill"
             placeholder="Search: Textbook, Author, ISBN"
             aria-label="Textbook, Author, ISBN"
             aria-describedby="basic-addon2"
-            />
-          <Button className = "rounded-pill" variant="outline-dark" id="search" style={{ backgroundColor: "#c1e1a7", borderColor: "#c1e1a7" }}>
-          Search
+          />
+          <Button
+            className="rounded-pill"
+            variant="outline-dark"
+            id="search"
+            style={{ backgroundColor: "#c1e1a7", borderColor: "#c1e1a7" }}
+          >
+            Search
           </Button>
         </InputGroup>
       </div>
       <br></br>
       <div>
-        <h2 className="card-header text-white " style={{ backgroundColor: "#1a4a5a"}}>Popular Subjects</h2>
+        <h2
+          className="card-header text-white "
+          style={{ backgroundColor: "#1a4a5a" }}
+        >
+          Popular Subjects
+        </h2>
         <Container className="">
           <Row
             className="justify-content-md-center"
@@ -99,7 +109,12 @@ const HomePage = () => {
         </Container>
       </div>
       <br></br>
-      <h2 className="card-header text-white " style = {{backgroundColor: "#1a4a5a"}}>Latest Products</h2>
+      <h2
+        className="card-header text-white "
+        style={{ backgroundColor: "#1a4a5a" }}
+      >
+        Latest Products
+      </h2>
 
       <Row sm={1} md={2} lg={4} xl={5}>
         {products.map((product) => (

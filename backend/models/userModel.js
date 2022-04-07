@@ -3,6 +3,14 @@ import bcrypt from "bcryptjs";
 
 const userSchema = mongoose.Schema(
   {
+    username: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
@@ -12,14 +20,38 @@ const userSchema = mongoose.Schema(
       required: true,
       unique: true,
     },
+    phone: {
+      type: String,
+      required: true,
+    },
+    bio: {
+      type: String,
+      required: true,
+    },
+    major: {
+      type: String,
+      required: true,
+    },
+    year: {
+      type: Number,
+      required: true,
+    },
+    rating: {
+      type: Number,
+      required: true,
+    },
+    reviews: {
+      type: Number,
+      required: true,
+    },
     password: {
       type: String,
       required: true,
     },
-    isAdmin: {
-      type: Boolean,
+    listings: {
+      type: Number,
       required: true,
-      default: false,
+      default: 0,
     },
   },
   {
