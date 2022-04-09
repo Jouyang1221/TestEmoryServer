@@ -15,7 +15,7 @@ const ItemPage = () => {
 
   useEffect(() => {
     const fetchproduct = async () => {
-      const { data } = await axios.get(`/api/products/${Number(id)}`);
+      const { data } = await axios.get(`/api/products/${id}`);
       setProduct(data);
       setSeller(data.seller);
     };
