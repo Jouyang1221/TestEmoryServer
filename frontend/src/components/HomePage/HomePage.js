@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Container } from "react-bootstrap";
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
 import Product from "../ProductLayouts/Product";
 // import products from "../products";
 import axios from "axios";
 import "./HomePage.css";
+import SearchBar from "./SearchBar";
+import { LinkContainer } from "react-router-bootstrap";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -20,24 +19,7 @@ const HomePage = () => {
 
   return (
     <div className="">
-      <div className="col-12 d-flex align-items-center">
-        <InputGroup className="mb-2">
-          <FormControl
-            className="rounded-pill"
-            placeholder="Search: Textbook, Author, ISBN"
-            aria-label="Textbook, Author, ISBN"
-            aria-describedby="basic-addon2"
-          />
-          <Button
-            className="rounded-pill"
-            variant="outline-dark"
-            id="search"
-            style={{ backgroundColor: "#c1e1a7", borderColor: "#c1e1a7" }}
-          >
-            Search
-          </Button>
-        </InputGroup>
-      </div>
+      <SearchBar />
       <br></br>
       <div>
         <h2
@@ -54,27 +36,35 @@ const HomePage = () => {
             lg={4}
             xl={5}
           >
-            <Col className="d-grid gap-2">
-              <button className="popbg rounded-pill btn btn-lg m-2">
-                <b>Biology</b>
-              </button>
-            </Col>
-            <Col className="d-grid gap-2">
-              <button className="popbg rounded-pill btn btn-lg m-2">
-                <b>Chemistry</b>
-              </button>
-            </Col>
+            <LinkContainer to="/search/Biology">
+              <Col className="d-grid gap-2">
+                <button className="popbg rounded-pill btn btn-lg m-2">
+                  <b>Biology</b>
+                </button>
+              </Col>
+            </LinkContainer>
+            <LinkContainer to="/search/Chemistry">
+              <Col className="d-grid gap-2">
+                <button className="popbg rounded-pill btn btn-lg m-2">
+                  <b>Chemistry</b>
+                </button>
+              </Col>
+            </LinkContainer>
+            <LinkContainer to="/search/Psychology">
+              <Col className="d-grid gap-2">
+                <button className="popbg rounded-pill btn btn-lg m-2">
+                  <b>Psychology</b>
+                </button>
+              </Col>
+            </LinkContainer>
 
-            <Col className="d-grid gap-2">
-              <button className="popbg rounded-pill btn btn-lg m-2">
-                <b>Psychology</b>
-              </button>
-            </Col>
-            <Col className="d-grid gap-2">
-              <button className="popbg rounded-pill btn btn-lg m-2">
-                <b>English</b>
-              </button>
-            </Col>
+            <LinkContainer to="/search/Anthropology">
+              <Col className="d-grid gap-2">
+                <button className="popbg rounded-pill btn btn-lg m-2">
+                  <b>Anthropology</b>
+                </button>
+              </Col>
+            </LinkContainer>
           </Row>
 
           <Row
@@ -84,27 +74,34 @@ const HomePage = () => {
             lg={4}
             xl={5}
           >
-            <Col className="d-grid gap-2">
-              <button className="popbg rounded-pill btn btn-lg m-2">
-                <b>Comp. Science</b>
-              </button>
-            </Col>
-            <Col className="d-grid gap-2">
-              <button className="popbg rounded-pill btn btn-lg m-2">
-                <b>Physics</b>
-              </button>
-            </Col>
-
-            <Col className="d-grid gap-2">
-              <button className="popbg rounded-pill btn btn-lg m-2">
-                <b>Math</b>
-              </button>
-            </Col>
-            <Col className="d-grid gap-2">
-              <button className="popbg rounded-pill btn btn-lg m-2">
-                <b>French</b>
-              </button>
-            </Col>
+            <LinkContainer to="/search/Computer Science">
+              <Col className="d-grid gap-2">
+                <button className="popbg rounded-pill btn btn-lg m-2">
+                  <b>Comp. Science</b>
+                </button>
+              </Col>
+            </LinkContainer>
+            <LinkContainer to="/search/Physics">
+              <Col className="d-grid gap-2">
+                <button className="popbg rounded-pill btn btn-lg m-2">
+                  <b>Physics</b>
+                </button>
+              </Col>
+            </LinkContainer>
+            <LinkContainer to="/search/Math">
+              <Col className="d-grid gap-2">
+                <button className="popbg rounded-pill btn btn-lg m-2">
+                  <b>Math</b>
+                </button>
+              </Col>
+            </LinkContainer>
+            <LinkContainer to="/search/Economics">
+              <Col className="d-grid gap-2">
+                <button className="popbg rounded-pill btn btn-lg m-2">
+                  <b>Economics</b>
+                </button>
+              </Col>
+            </LinkContainer>
           </Row>
         </Container>
       </div>

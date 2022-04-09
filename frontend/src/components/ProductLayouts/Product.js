@@ -34,9 +34,7 @@ const Product = ({ product }) => {
               </Link>
             </div>
             <div className="col-sm-5">
-              <Card.Text>
-                <h6>${product.price.toFixed(2)}</h6>
-              </Card.Text>
+              <h6>${product.price.toFixed(2)}</h6>
             </div>
           </div>
         </Card.Text>

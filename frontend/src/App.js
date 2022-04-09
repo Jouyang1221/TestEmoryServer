@@ -14,6 +14,7 @@ import HeaderSignedIn from "./components/Headers/HeaderSignedIn";
 import SellingScreen from "./screens/SellingScreen";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import EditProfilePage from "./components/ProfilePage/EditProfilePage";
+import SearchPage from "./components/SearchPage/SearchPage";
 
 // function App() {
 const App = () => {
@@ -40,6 +41,15 @@ const App = () => {
           <>
             <Header />
             <ItemScreen />
+          </>
+        }
+      ></Route>
+      <Route
+        path="/search/:key"
+        element={
+          <>
+            <Header />
+            <SearchPage />
           </>
         }
       ></Route>
