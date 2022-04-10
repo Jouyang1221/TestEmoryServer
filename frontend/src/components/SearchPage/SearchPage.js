@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./SearchPage.css";
 import SearchBar from "../HomePage/SearchBar";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 const SearchPage = () => {
   const { key } = useParams();
