@@ -15,7 +15,7 @@ import SellingScreen from "./screens/SellingScreen";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import EditProfilePage from "./components/ProfilePage/EditProfilePage";
 import SearchPage from "./components/SearchPage/SearchPage";
-
+import Messanger from "./screens/Messenger/Messanger";
 // function App() {
 const App = () => {
   return (
@@ -85,10 +85,11 @@ const App = () => {
         element={
           <>
             <Header />
-            <ChatScreen />
+            <Messanger />
           </>
         }
       ></Route>
+
       <Route
         path="/Profile"
         element={
