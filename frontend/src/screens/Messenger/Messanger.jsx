@@ -5,8 +5,8 @@ import Message from "../../components/message/message";
 
 export default function Messanger() {
   return (
-    <>
-      <div className="messanger">
+    <div>
+      <div className="messanger ">
         <div className="chatMenu card">
           <div className="chatMenuWrapper">
             <input placeholder="search for friends" className="chatMenuInput" />
@@ -44,6 +44,6 @@ export default function Messanger() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

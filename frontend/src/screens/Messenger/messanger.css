@@ -1,6 +1,8 @@
 .messanger {
   height: calc(100vh -70px);
   display: flex;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 .chatMenu {
   flex: 3.5;
@@ -57,4 +59,9 @@
 .chatOnline {
   padding: 10px;
   height: 100%; /* may be a problem  */
+}
+.chat-center {
+  display: flex;
+
+  justify-content: center;
 }
