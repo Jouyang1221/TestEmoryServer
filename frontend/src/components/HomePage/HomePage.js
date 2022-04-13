@@ -28,7 +28,7 @@ const HomePage = () => {
         >
           Popular Subjects
         </h2>
-        <Container className="">
+        <Container className = "">
           <Row
             className="justify-content-md-center"
             sm={1}
@@ -52,15 +52,14 @@ const HomePage = () => {
             </LinkContainer>
             <LinkContainer to="/search/Psychology">
               <Col className="d-grid gap-2">
-                <button className="popbg rounded-pill btn btn-lg m-2">
+                <button className="text popbg rounded-pill btn btn-lg m-2">
                   <b>Psychology</b>
                 </button>
               </Col>
             </LinkContainer>
-
             <LinkContainer to="/search/Anthropology">
               <Col className="d-grid gap-2">
-                <button className="popbg rounded-pill btn btn-lg m-2">
+                <button className="text popbg rounded-pill btn btn-lg m-2">
                   <b>Anthropology</b>
                 </button>
               </Col>

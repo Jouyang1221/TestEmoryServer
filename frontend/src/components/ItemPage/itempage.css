@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 75%;
   margin: 0 auto;
 }
 
@@ -12,10 +11,11 @@
 
 .img-wrapper {
   background-color: #e6efff;
+  display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   vertical-align: center;
-  width: 75%;
 }
 .txt-left {
   text-align: left;
@@ -25,11 +25,11 @@
   display: flex;
   text-align: left;
   align-items: left;
-  width: 75%;
+  overflow: auto;
 }
 
-.tag-background {
-  background-color: #d2b000;
+.tag-bg {
+  background-color: #c1e1a7;
 }
 
 .item-bar {
@@ -42,12 +42,14 @@
 .bar-col1 {
   display: flex;
   vertical-align: center;
-  padding-left: 90px;
   text-align: left;
 }
 
 .bar-col2 {
   display: flex;
   align-items: center;
-  padding-left: 175px;
+}
+
+.chat-btn {
+  background-color: #1a4a5a;
 }
