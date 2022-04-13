@@ -1,13 +1,13 @@
 import ReactRoundedImage from "react-rounded-image";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
-import "./ProfilePage.css";
+import "./OwnProfilePage.css";
 import Product from "./ProfilePageListing";
 import Rating1 from "../userStars/userStars";
 import axios from "axios";
 
-const ProfilePage = () => {
+const OwnProfilePage = () => {
   const { username } = useParams();
   const [users, setUser] = useState({});
   const [listingsArray, setListingArray] = useState("");
@@ -39,7 +39,12 @@ const ProfilePage = () => {
               borderRadius="70"
             />
           </div>
-          <h2 className="m-2 wrapper">{users.name}</h2>
+          <h2 className="m-2 wrapper">
+            {users.name}
+            <Link to={`/${users.username}/own/edit`}>
+              <i class="fa-solid fa-pencil"></i>
+            </Link>
+          </h2>
           <h5 className="card-title text-muted m-2 wrapper">
             <i className="fas fa-user wrapper"></i> @{users.username}
           </h5>
@@ -84,9 +89,7 @@ const ProfilePage = () => {
             <h4 className="-title">
               <strong>Bio:</strong>
             </h4>
-            <p className="card-body">
-              {users.bio} {listingsArray}
-            </p>
+            <p className="card-body">{users.bio}</p>
           </div>
         </div>
 
@@ -101,4 +104,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default OwnProfilePage;

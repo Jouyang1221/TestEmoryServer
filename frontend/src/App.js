@@ -16,6 +16,7 @@ import ProfilePage from "./components/ProfilePage/ProfilePage";
 import EditProfilePage from "./components/ProfilePage/EditProfilePage";
 import SearchPage from "./components/SearchPage/SearchPage";
 import Messanger from "./screens/Messenger/Messanger";
+import OwnProfilePage from "./components/ProfilePage/OwnProfilePage";
 // function App() {
 const App = () => {
   return (
@@ -63,11 +64,20 @@ const App = () => {
         }
       ></Route>
       <Route
-        path="/:username/edit"
+        path="/:username/own/edit"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <EditProfilePage />
+          </>
+        }
+      ></Route>
+      <Route
+        path="/:username/own"
+        element={
+          <>
+            <HeaderSignedIn />
+            <OwnProfilePage />
           </>
         }
       ></Route>
