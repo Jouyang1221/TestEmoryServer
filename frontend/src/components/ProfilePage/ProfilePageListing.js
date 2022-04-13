@@ -11,7 +11,7 @@ const Product = ({ productNumber }) => {
   useEffect(() => {
     const fetchproduct = async () => {
       const { data } = await axios.get(`/api/products/${productNumber}`);
-      setProduct(data);
+      setProduct(data[0]);
     };
     fetchproduct();
   }, []);
@@ -32,6 +32,7 @@ const Product = ({ productNumber }) => {
 
           <div className="col-sm-6">
             <h4>
+              {productNumber}
               <Link to={`/product/${product._id}`}>
                 <strong>{product.name}</strong>
               </Link>

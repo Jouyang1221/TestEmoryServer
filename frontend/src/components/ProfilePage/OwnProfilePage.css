@@ -1,0 +1,40 @@
+.div-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: center;
+  background-color: rgba(119, 175, 230, 0.311);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-wrapper2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: center;
+  background-color: rgba(6, 68, 131, 0.311);
+}
+.div-row {
+  flex-grow: 10;
+}
+
+.card-img-top {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-size {
+  width: 240px;
+  height: 500px;
+}
+.photo {
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 250px;
+}
