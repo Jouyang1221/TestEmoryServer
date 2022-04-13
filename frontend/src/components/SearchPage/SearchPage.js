@@ -23,9 +23,10 @@ const SearchPage = () => {
   }, []);
 
   const filteredProducts = products.filter((product) => {
+    var isbnNum = product.isbn.toString();
     if (
       product.name.toLowerCase().includes(search) ||
-      //   product.isbn.toLowerCase().includes(key) ||
+      isbnNum.toLowerCase().includes(search) ||
       product.category.toLowerCase().includes(search) ||
       product.author.toLowerCase().includes(search) ||
       product.course.toLowerCase().includes(search)
