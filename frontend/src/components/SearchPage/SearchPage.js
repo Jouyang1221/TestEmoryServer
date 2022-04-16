@@ -3,6 +3,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import Product from "../ProductLayouts/Product";
 import { useParams } from "react-router-dom";
 // import products from "../products";
+import { PureComponent } from "react";
 import axios from "axios";
 import "./SearchPage.css";
 import SearchBar from "../HomePage/SearchBar";
@@ -20,7 +21,7 @@ const SearchPage = () => {
     };
     setSearch(key.toLowerCase());
     fetchProducts();
-  }, []);
+  }, [key]);
 
   const filteredProducts = products.filter((product) => {
     var isbnNum = product.isbn.toString();
