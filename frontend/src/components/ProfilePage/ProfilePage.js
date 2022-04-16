@@ -19,7 +19,7 @@ const ProfilePage = () => {
       setListingArray(data[0].listings);
     };
     fetchuser();
-  }, []);
+  }, [username]);
 
   return (
     <>
