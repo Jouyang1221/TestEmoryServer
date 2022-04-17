@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
@@ -9,6 +9,7 @@ import "./itempage.css";
 import ProfilePic from "./ItemPageProfilePic";
 
 const ItemPage = () => {
+  let navigate = useNavigate();
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [sellers, setSeller] = useState("");
@@ -21,6 +22,11 @@ const ItemPage = () => {
     };
     fetchproduct();
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    navigate(`/chat`, { replace: true });
+  };
 
   return (
     <>
@@ -89,7 +95,7 @@ const ItemPage = () => {
               <h3 className="m-5">
                 <b>${Number(product.price).toFixed(2)}</b>
               </h3>
-              <Button variant="primary" size="lg">
+              <Button variant="primary" size="lg" onClick={handleSubmit}>
                 Chat
               </Button>
             </Col>
