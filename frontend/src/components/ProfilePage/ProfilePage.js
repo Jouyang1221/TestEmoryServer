@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./ProfilePage.css";
-import Product from "./ProfilePageListing";
+// import Product from "./ProfilePageListing";
 import Rating1 from "../userStars/userStars";
 import axios from "axios";
 
@@ -15,8 +15,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchuser = async () => {
       const { data } = await axios.get(`/api/users/${username}`);
-      setUser(data);
-      setListingArray(data.listings);
+      setUser(data[0]);
     };
     fetchuser();
   }, []);
@@ -91,9 +90,7 @@ const ProfilePage = () => {
         <div className="card w-50 h-10">
           <h2 className="card-header bg-info text-white mb-2">Listings</h2>
           <div className="card-body  h-10">
-            {listingsArray.map((list) => (
-              <Product productNumber={list}></Product>
-            ))}
+            {/* <Product productNumber={users.id}></Product> */}
           </div>
         </div>
       </div>

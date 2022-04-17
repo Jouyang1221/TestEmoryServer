@@ -1,22 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Product from "../ProductLayouts/Product";
-// import products from "../products";
-import axios from "axios";
+import { listProducts } from "../../actions/productActions";
 import "./HomePage.css";
 
 const HomePage = () => {
-  const [products, setProducts] = useState([]);
+  //   const [products, setProducts] = useState([]);
+  //   useEffect(() => {
+  //     const fetchProducts = async () => {
+  //       const { data } = await axios.get("/api/products");
+  //       setProducts(data);
+  //     };
+  //     fetchProducts();
+  //   }, []);
+
+  const dispatch = useDispatch();
+
+  const productList = useSelector((state) => state.productList);
+  const { products } = productList;
+
   useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axios.get("/api/products");
-      setProducts(data);
-    };
-    fetchProducts();
-  }, []);
+    dispatch(listProducts());
+  }, [dispatch]);
 
   return (
     <div className="">
