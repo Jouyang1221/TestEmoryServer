@@ -1,13 +1,13 @@
 import ReactRoundedImage from "react-rounded-image";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
-import "./ProfilePage.css";
-// import Product from "./ProfilePageListing";
+import "./OwnProfilePage.css";
+import Product from "./ProfilePageListing";
 import Rating1 from "../userStars/userStars";
 import axios from "axios";
 
-const ProfilePage = () => {
+const OwnProfilePage = () => {
   const { username } = useParams();
   const [users, setUser] = useState({});
   const [listingsArray, setListingArray] = useState("");
@@ -16,11 +16,10 @@ const ProfilePage = () => {
     const fetchuser = async () => {
       const { data } = await axios.get(`/api/users/${username}`);
       setUser(data[0]);
-
       setListingArray(data[0].listings);
     };
     fetchuser();
-  }, [username]);
+  }, []);
 
   return (
     <>
@@ -40,7 +39,12 @@ const ProfilePage = () => {
               borderRadius="70"
             />
           </div>
-          <h2 className="m-2 wrapper">{users.name}</h2>
+          <h2 className="m-2 wrapper">
+            {users.name}
+            <Link to={`/${users.username}/own/edit`}>
+              <i class="fa-solid fa-pencil"></i>
+            </Link>
+          </h2>
           <h5 className="card-title text-muted m-2 wrapper">
             <i className="fas fa-user wrapper"></i> @{users.username}
           </h5>
@@ -92,11 +96,7 @@ const ProfilePage = () => {
         <div className="card w-50 h-10">
           <h2 className="card-header bg-info text-white mb-2">Listings</h2>
           <div className="card-body  h-10">
-<<<<<<< HEAD
-            {/* <Product productNumber={users.id}></Product> */}
-=======
             <Product productNumber={listingsArray}></Product>
->>>>>>> 6a1dcc9b993f4f3eee65f55f2ce8d418664bbf3b
           </div>
         </div>
       </div>
@@ -104,4 +104,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default OwnProfilePage;

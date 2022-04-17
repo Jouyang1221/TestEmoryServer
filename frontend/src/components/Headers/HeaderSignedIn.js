@@ -21,7 +21,7 @@ const HeaderSignedIn = () => {
                   Chat <i className="fas fa-solid fa-message"></i>
                 </Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/profile">
+              <LinkContainer to="/jouyan8/own">
                 <Nav.Link>
                   Profile <i className="fas fa-user"></i>
                 </Nav.Link>

@@ -13,7 +13,10 @@ import ItemScreen from "./screens/ItemScreen";
 import HeaderSignedIn from "./components/Headers/HeaderSignedIn";
 import SellingScreen from "./screens/SellingScreen";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
-
+import EditProfilePage from "./components/ProfilePage/EditProfilePage";
+import SearchPage from "./components/SearchPage/SearchPage";
+import Messanger from "./screens/Messenger/Messanger";
+import OwnProfilePage from "./components/ProfilePage/OwnProfilePage";
 // function App() {
 const App = () => {
   return (
@@ -43,11 +46,38 @@ const App = () => {
         }
       ></Route>
       <Route
+        path="/search/:key"
+        element={
+          <>
+            <Header />
+            <SearchPage />
+          </>
+        }
+      ></Route>
+      <Route
         path="/:username"
         element={
           <>
             <Header />
             <ProfilePage />
+          </>
+        }
+      ></Route>
+      <Route
+        path="/:username/own/edit"
+        element={
+          <>
+            <HeaderSignedIn />
+            <EditProfilePage />
+          </>
+        }
+      ></Route>
+      <Route
+        path="/:username/own"
+        element={
+          <>
+            <HeaderSignedIn />
+            <OwnProfilePage />
           </>
         }
       ></Route>
@@ -65,10 +95,11 @@ const App = () => {
         element={
           <>
             <Header />
-            <ChatScreen />
+            <Messanger />
           </>
         }
       ></Route>
+
       <Route
         path="/Profile"
         element={
