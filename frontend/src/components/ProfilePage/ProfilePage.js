@@ -84,9 +84,7 @@ const ProfilePage = () => {
             <h4 className="-title">
               <strong>Bio:</strong>
             </h4>
-            <p className="card-body">
-              {users.bio} {listingsArray}
-            </p>
+            <p className="card-body">{users.bio}</p>
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 import ReactRoundedImage from "react-rounded-image";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./ProfilePage.css";
@@ -18,6 +18,7 @@ const EditProfilePage = () => {
   const [major, setMajor] = useState("");
   const [year, setYear] = useState(0);
   const [bio, setBio] = useState("");
+  let navigate = useNavigate();
 
   useEffect(() => {
     const fetchuser = async () => {
@@ -63,7 +64,7 @@ const EditProfilePage = () => {
 
     try {
       await axios.put("/api/users", updatedUserProfile);
-      window.location.reload();
+      navigate(`/${username}`, { replace: true });
     } catch (err) {}
   };
 
