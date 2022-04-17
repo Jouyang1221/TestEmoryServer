@@ -1,5 +1,5 @@
 import ReactRoundedImage from "react-rounded-image";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./ProfilePage.css";
@@ -18,6 +18,7 @@ const EditProfilePage = () => {
   const [major, setMajor] = useState("");
   const [year, setYear] = useState(0);
   const [bio, setBio] = useState("");
+  let navigate = useNavigate();
 
   useEffect(() => {
     const fetchuser = async () => {
@@ -33,7 +34,7 @@ const EditProfilePage = () => {
     fetchuser();
   }, []);
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // const formData = new FormData();
 
@@ -50,18 +51,22 @@ const EditProfilePage = () => {
     // // Send formData object
     // axios.post("api/uploadfile", formData);
 
-    // dispatch(
-    //   updateUserProfile({
-    //     id: users._id,
-    //     image: profilePic,
-    //     name: name,
-    //     phone: phone,
-    //     email: users.email,
-    //     password: users.password,
-    //   })
-    // );
-    console.log("You clicked submit.");
-  }
+    const updatedUserProfile = {
+      username: users.username,
+      image: users.image,
+      name: name,
+      email: users.email,
+      phone: phone,
+      bio: bio,
+      major: major,
+      year: year,
+    };
+
+    try {
+      await axios.put("/api/users", updatedUserProfile);
+      navigate(`/${username}`, { replace: true });
+    } catch (err) {}
+  };
 
   return (
     <>
@@ -75,7 +80,7 @@ const EditProfilePage = () => {
               <ReactRoundedImage
                 className="wrapper"
                 image={profilePic}
-                roundedColor="#321124"
+                roundedColor="white"
                 imageWidth="150"
                 imageHeight="150"
                 roundedSize="13"
@@ -122,7 +127,7 @@ const EditProfilePage = () => {
                 <h6>
                   <i className="fa-solid fa-phone"></i> Enter your number:{" "}
                   <input
-                    type="tel"
+                    type="text"
                     value={phone}
                     required
                     onChange={(e) => setPhone(e.target.value)}
