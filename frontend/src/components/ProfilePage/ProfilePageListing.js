@@ -18,6 +18,7 @@ const Product = ({ productNumber }) => {
   }, []);
 
   return (
+
     <div clasName="wrapper row">
       <Card className="edge my-2 p-2">
         <div className="row">
@@ -32,7 +33,6 @@ const Product = ({ productNumber }) => {
           </div>
           <div className="col-sm-6">
             <h4>
-              {productNumber}
               <Link to={`/product/${product._id}`}>
                 <strong>{product.name}</strong>
               </Link>

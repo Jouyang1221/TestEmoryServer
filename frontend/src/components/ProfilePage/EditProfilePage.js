@@ -7,10 +7,13 @@ import { useDispatch, useSelector } from "react-redux";
 import Product from "./ProfilePageListing";
 import Rating1 from "../userStars/userStars";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const EditProfilePage = () => {
   const dispatch = useDispatch();
-  const { username } = useParams();
+  const { user } = useContext(AuthContext);
+  const username = user.username;
   const [users, setUser] = useState({});
   const [profilePic, setProfilePic] = useState("");
   const [name, setName] = useState("");
@@ -64,7 +67,7 @@ const EditProfilePage = () => {
 
     try {
       await axios.put("/api/users", updatedUserProfile);
-      navigate(`/${username}`, { replace: true });
+      navigate(`/own`, { replace: true });
     } catch (err) {}
   };
 

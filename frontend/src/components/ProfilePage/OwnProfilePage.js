@@ -6,9 +6,12 @@ import "./OwnProfilePage.css";
 import Product from "./ProfilePageListing";
 import Rating1 from "../userStars/userStars";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const OwnProfilePage = () => {
-  const { username } = useParams();
+  const { user } = useContext(AuthContext);
+  const username = user.username;
   const [users, setUser] = useState({});
   const [listingsArray, setListingArray] = useState("");
 
@@ -41,7 +44,7 @@ const OwnProfilePage = () => {
           </div>
           <h2 className="m-2 wrapper">
             {users.name}
-            <Link to={`/${users.username}/own/edit`}>
+            <Link to={`/own/edit`}>
               <i class="fa-solid fa-pencil"></i>
             </Link>
           </h2>

@@ -28,10 +28,10 @@ const App = () => {
         path="/"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <main>
               <Container>
-                <h1>Welcome To Emory Exchange</h1>
+                <h1>Welcome </h1>
                 <HomeScreen />
               </Container>
             </main>
@@ -43,7 +43,7 @@ const App = () => {
         path="/product/:id"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <ItemScreen />
           </>
         }
@@ -52,7 +52,7 @@ const App = () => {
         path="/search/:key"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <SearchPage />
           </>
         }
@@ -67,7 +67,7 @@ const App = () => {
         }
       ></Route>
       <Route
-        path="/:username/own/edit"
+        path="/own/edit"
         element={
           <>
             <HeaderSignedIn />
@@ -76,7 +76,7 @@ const App = () => {
         }
       ></Route>
       <Route
-        path="/:username/own"
+        path="/own"
         element={
           <>
             <HeaderSignedIn />
@@ -86,8 +86,8 @@ const App = () => {
       ></Route>
       <Route
         path="/login"
-        element={<LoginScreen />}
-        // element={<>{user ? <Navigate to="/" /> : <LoginScreen />}</>}
+        // element={<LoginScreen />}
+        element={<>{user ? <Navigate to="/" /> : <LoginScreen />}</>}
       ></Route>
       <Route
         path="/chat"
