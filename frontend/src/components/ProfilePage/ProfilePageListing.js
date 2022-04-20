@@ -32,7 +32,6 @@ const Product = ({ productNumber }) => {
 
           <div className="col-sm-6">
             <h4>
-              {productNumber}
               <Link to={`/product/${product._id}`}>
                 <strong>{product.name}</strong>
               </Link>

@@ -1,6 +1,7 @@
 import React from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Container, Navbar, Nav } from "react-bootstrap";
+import { LogoutButton } from "./logout";
 
 const HeaderSignedIn = () => {
   return (
@@ -26,6 +27,7 @@ const HeaderSignedIn = () => {
                   Profile <i className="fas fa-user"></i>
                 </Nav.Link>
               </LinkContainer>
+              <LogoutButton />
             </Nav>
           </Container>
         </Navbar>

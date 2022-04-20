@@ -1,25 +1,25 @@
-import React, { useContext, useRef, Component } from "react";
+import React, { useContext, useRef, Component, useState } from "react";
 import Image from "react-bootstrap/Image";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 import "./Login.css";
-import { CircularProgress } from "@material-ui/core";
+// import { CircularProgress } from "@material-ui/core";
 
 const Login = () => {
-  const email = useRef();
-  const password = useRef();
   const { isFetching, dispatch } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  // const email = useRef();
+  // const password = useRef();
+  const [password, setePassword] = useState("");
 
   const handleSubmit = (e) => {
     console.log(email);
     e.preventDefault();
-    loginCall(
-      { email: email.current.value, password: password.current.value },
-      dispatch
-    );
+    loginCall({ email: email, password: password }, dispatch);
   };
+
   return (
     <div className="login-wrapper">
       <div className="row rounded login-background d-flex align-items-center">
@@ -41,10 +41,11 @@ const Login = () => {
             <input
               className="m-2"
               type="email"
-              pattern=".+emory\.edu"
+              // pattern=".+emory\.edu"
               size="25"
               placeholder="Enter your Emory Email"
-              ref={email}
+              // ref={email}
+              onChange={(e) => setEmail(e.target.value)}
             ></input>
             <h4 className="m-2">
               <i class="fa-solid fa-lock m-2"></i>Password
@@ -54,7 +55,8 @@ const Login = () => {
               type="password"
               size="25"
               placeholder="Enter your password"
-              ref={password}
+              // ref={password}
+              onChange={(e) => setePassword(e.target.value)}
             ></input>
             <br></br>
             <Link className="m-2" to="/login/forgotPassword">
@@ -68,11 +70,11 @@ const Login = () => {
                 form="Login"
                 disabled={isFetching}
               >
-                {isFetching ? (
+                {/* {isFetching ? (
                   <CircularProgress color="white" size="20px" />
                 ) : (
                   "Log In"
-                )}
+                )} */}
               </button>
             </div>
             <p className="separator">or</p>
