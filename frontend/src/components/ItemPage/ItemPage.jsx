@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap"
 import "./itempage.css";
 import ProfilePic from "./ItemPageProfilePic";
 
@@ -45,14 +45,14 @@ const ItemPage = () => {
           <h4 className="txt-left ">
             <b>Tags: </b>
           </h4>
-          <button className="rounded-pill btn btn-warning btn-m mx-1">
+          <button className="tag-bg rounded-pill btn btn-m mx-1">
             <b>{product.course}</b>
           </button>
-          <button className="rounded-pill btn btn-warning btn-m mx-1">
-            {product.category}
+          <button className="tag-bg rounded-pill btn btn-m mx-1">
+            <b>{product.category}</b>
           </button>
-          <button className="rounded-pill btn btn-warning btn-m mx-1">
-            {product.condition}
+          <button className="tag-bg rounded-pill btn btn-m mx-1">
+            <b>{product.condition}</b>
           </button>
         </div>
 
@@ -91,13 +91,13 @@ const ItemPage = () => {
                 </h5>
               </Link>
             </Col>
-            <Col className="bar-col1">
+            <Col className="bar-col2">
               <h3 className="m-5">
                 <b>${Number(product.price).toFixed(2)}</b>
               </h3>
               <Button variant="primary" size="lg" onClick={handleSubmit}>
                 Chat
-              </Button>
+              </button>
             </Col>
           </Row>
         </Container>

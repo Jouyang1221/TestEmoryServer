@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./ProfilePage.css";
+import { Row, Col, Container} from "react-bootstrap";
 import Product from "./ProfilePageListing";
 import Rating1 from "../userStars/userStars";
 import axios from "axios";
@@ -24,22 +25,23 @@ const ProfilePage = () => {
   return (
     <>
       <div className="div-wrapper2">
-        <h2>Profile Page</h2>
       </div>
       <div className="div-wrapper">
-        <div className="card mb-3 div-row w-50 ">
-          <div className="wrapper">
+        <div className="card bl-corner my-3 div-row w-75">
+          <Row>
+            <Col>
+          <div className="wrapper my-3 mx-2">
             <ReactRoundedImage
               className="wrapper"
               image={users.image}
-              roundedColor="#321124"
+              roundedColor="#EFBC75"
               imageWidth="150"
               imageHeight="150"
               roundedSize="13"
               borderRadius="70"
             />
           </div>
-          <h2 className="m-2 wrapper">{users.name}</h2>
+          <h3 className="m-2 wrapper">{users.name}</h3>
           <h5 className="card-title text-muted m-2 wrapper">
             <i className="fas fa-user wrapper"></i> @{users.username}
           </h5>
@@ -49,10 +51,17 @@ const ProfilePage = () => {
               numReview={` ${users.reviews} reviews`}
             />
           </div>
-
+          <div className="card-body">
+            <h5 className="-title mx-2">
+              <b>Bio:</b>
+            </h5>
+            <p className="card-body">{users.bio}</p>
+          </div>
+          </Col>
+          <Col>
           <br />
           {/* Names */}
-          <h3 className="card-header bg-info text-white">Contact</h3>
+          <h5 className="card-header subtitle text-white mx-2"><b>Contact</b></h5>
           <div className="card-body">
             {/* Username */}
 
@@ -65,7 +74,7 @@ const ProfilePage = () => {
             </h7>
           </div>
 
-          <h4 className="card-header bg-info text-white">About Me</h4>
+          <h5 className="card-header subtitle mx-2 text-white">About Me</h5>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
               <h5>
@@ -80,20 +89,14 @@ const ProfilePage = () => {
               </h5>
             </li>
           </ul>
-          <div className="card-body">
-            <h4 className="-title">
-              <strong>Bio:</strong>
-            </h4>
-            <p className="card-body">{users.bio}</p>
-          </div>
+          </Col>
+          </Row>
+            <h2 className="card-header subtitle mx-2 text-white">Listings</h2>
+            <div className = "card-body h-10">
+              <Product productNumber={listingsArray}></Product>
+            </div>
         </div>
 
-        <div className="card w-50 h-10">
-          <h2 className="card-header bg-info text-white mb-2">Listings</h2>
-          <div className="card-body  h-10">
-            <Product productNumber={listingsArray}></Product>
-          </div>
-        </div>
       </div>
     </>
   );

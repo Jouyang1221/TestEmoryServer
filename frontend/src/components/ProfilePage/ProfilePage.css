@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   vertical-align: center;
-  background-color: rgba(119, 175, 230, 0.311);
+  background-color: white;
 }
 
 .wrapper {
@@ -17,7 +17,7 @@
   flex-direction: column;
   align-items: center;
   vertical-align: center;
-  background-color: rgba(6, 68, 131, 0.311);
+  background-color: white;
 }
 .div-row {
   flex-grow: 10;
@@ -37,4 +37,11 @@
   max-height: 250px;
   width: auto;
   max-width: 250px;
+}
+.test {
+  background-color: azure;
+}
+
+.test1 {
+  background-color: purple;
 }
