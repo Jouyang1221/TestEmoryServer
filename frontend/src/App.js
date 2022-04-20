@@ -67,7 +67,7 @@ const App = () => {
         }
       ></Route>
       <Route
-        path="/:username/own/edit"
+        path="/own/edit"
         element={
           <>
             <HeaderSignedIn />
@@ -76,7 +76,7 @@ const App = () => {
         }
       ></Route>
       <Route
-        path="/:username/own"
+        path="/own"
         element={
           <>
             <HeaderSignedIn />

@@ -17,7 +17,7 @@ const Product = ({ productNumber }) => {
   }, []);
 
   return (
-    <div clasName="wrapper row w-75">
+    <div className="wrapper row w-75">
       <Card className="my-2 p-2 ">
         <div className="row">
           <div className="col-sm-4">

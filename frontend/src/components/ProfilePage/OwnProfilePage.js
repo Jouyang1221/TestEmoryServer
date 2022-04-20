@@ -44,7 +44,7 @@ const OwnProfilePage = () => {
           </div>
           <h2 className="m-2 wrapper">
             {users.name}
-            <Link to={`/${users.username}/own/edit`}>
+            <Link to={`/own/edit`}>
               <i class="fa-solid fa-pencil"></i>
             </Link>
           </h2>
