@@ -11,6 +11,8 @@ import messageRoute from "./routes/messages.js";
 const router = express.Router();
 import path from "path";
 
+import bodyParser from "body-parser";
+
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
@@ -20,9 +22,12 @@ dotenv.config();
 connectDB();
 
 // Allows body to accept json data
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.use(helmet());
 app.use(morgan("common"));
+
 app.get("/", (req, res) => {
   res.send("Hi  ");
 });

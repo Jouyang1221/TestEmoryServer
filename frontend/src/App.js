@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { React, useContext } from "react";
+import { Routes, Route, Link, Navigate, BrowserRouter } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Header from "./components/Headers/Header";
 import Footer from "./components/Footer";
@@ -17,8 +17,11 @@ import EditProfilePage from "./components/ProfilePage/EditProfilePage";
 import SearchPage from "./components/SearchPage/SearchPage";
 import Messanger from "./screens/Messenger/Messanger";
 import OwnProfilePage from "./components/ProfilePage/OwnProfilePage";
+import { AuthContext } from "./context/AuthContext";
+
 // function App() {
 const App = () => {
+  const { user } = useContext(AuthContext);
   return (
     <Routes>
       <Route
@@ -83,12 +86,8 @@ const App = () => {
       ></Route>
       <Route
         path="/login"
-        element={
-          <>
-            <Header />
-            <LoginScreen />
-          </>
-        }
+        element={<LoginScreen />}
+        // element={<>{user ? <Navigate to="/" /> : <LoginScreen />}</>}
       ></Route>
       <Route
         path="/chat"

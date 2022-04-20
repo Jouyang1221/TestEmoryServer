@@ -1,10 +1,25 @@
-import React, { Component } from "react";
+import React, { useContext, useRef, Component } from "react";
 import Image from "react-bootstrap/Image";
+import { loginCall } from "../../apiCalls";
+import { AuthContext } from "../../context/AuthContext";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 import "./Login.css";
-const handleSubmit = () => {};
+import { CircularProgress } from "@material-ui/core";
+
 const Login = () => {
+  const email = useRef();
+  const password = useRef();
+  const { isFetching, dispatch } = useContext(AuthContext);
+
+  const handleSubmit = (e) => {
+    console.log(email);
+    e.preventDefault();
+    loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch
+    );
+  };
   return (
     <div className="login-wrapper">
       <div className="row rounded login-background d-flex align-items-center">
@@ -18,7 +33,7 @@ const Login = () => {
         </div>
 
         <div className="col-sm-5">
-          <form className="" onSubmit={handleSubmit}>
+          <form id="Login" onSubmit={handleSubmit}>
             <h1 className="login-wrapper">Logo</h1>
             <h4 className="m-1">
               <i className="fas fa-user m-2"></i>Emory Email
@@ -29,6 +44,7 @@ const Login = () => {
               pattern=".+emory\.edu"
               size="25"
               placeholder="Enter your Emory Email"
+              ref={email}
             ></input>
             <h4 className="m-2">
               <i class="fa-solid fa-lock m-2"></i>Password
@@ -38,6 +54,7 @@ const Login = () => {
               type="password"
               size="25"
               placeholder="Enter your password"
+              ref={password}
             ></input>
             <br></br>
             <Link className="m-2" to="/login/forgotPassword">
@@ -48,8 +65,14 @@ const Login = () => {
               <button
                 className="login-wrapper btn btn-primary btn-lg  m-2"
                 type="submit"
+                form="Login"
+                disabled={isFetching}
               >
-                Login
+                {isFetching ? (
+                  <CircularProgress color="white" size="20px" />
+                ) : (
+                  "Log In"
+                )}
               </button>
             </div>
             <p className="separator">or</p>

@@ -2,7 +2,7 @@ import express from "express";
 import User from "../models/userModel.js";
 const router = express.Router();
 
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 //REGISTER
 router.post("/register", async (req, res) => {
@@ -29,18 +29,24 @@ router.post("/register", async (req, res) => {
 //LOGIN
 router.post("/login", async (req, res) => {
   try {
-    const user = await User.findOne({ email: req.body.email });
-    !user && res.status(404).json("user not found");
+    console.log(req.body.email);
+    const user = await User.findOne({ email: req.body.email }).exec();
+
+    if (!user) {
+      return res.status(404).json("user not found");
+    }
 
     const validPassword = await bcrypt.compare(
       req.body.password,
       user.password
     );
-    !validPassword && res.status(400).json("wrong password");
+    if (!validPassword) {
+      return res.status(400).json("wrong password");
+    }
 
-    res.status(200).json(user);
+    return res.status(200).json(user);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
