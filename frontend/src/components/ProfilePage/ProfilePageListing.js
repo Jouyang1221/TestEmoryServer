@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import { useEffect } from "react";
 import { useState } from "react";
+import "./ProfilePageListing.css";
 import axios from "axios";
 
 const Product = ({ productNumber }) => {
@@ -17,8 +18,8 @@ const Product = ({ productNumber }) => {
   }, []);
 
   return (
-    <div clasName="wrapper row w-75">
-      <Card className="my-2 p-2 ">
+    <div clasName="wrapper row">
+      <Card className="edge my-2 p-2">
         <div className="row">
           <div className="col-sm-4">
             <Link to={`/product/${product._id}`}>
@@ -29,7 +30,6 @@ const Product = ({ productNumber }) => {
               />
             </Link>
           </div>
-
           <div className="col-sm-6">
             <h4>
               {productNumber}
@@ -38,7 +38,9 @@ const Product = ({ productNumber }) => {
               </Link>
             </h4>
             <br></br>
-
+            <Card.Text>
+              <strong>Price:</strong> ${product.price}
+            </Card.Text>
             <Card.Text>
               <strong>Author:</strong> {product.author}
             </Card.Text>
@@ -48,7 +50,7 @@ const Product = ({ productNumber }) => {
             <Card.Text>
               <strong>Description:</strong> {product.description}
             </Card.Text>
-            <div className="tags" style={{}}>
+          <div className="tags" style={{}}>
               <button className="rounded-pill btn btn-warning btn-sm m-1">
                 <b>{product.category}</b>
               </button>
@@ -59,11 +61,7 @@ const Product = ({ productNumber }) => {
                 {product.condition}
               </button>
             </div>
-          </div>
-
-          <div className="col-sm-2">
-            <Card.Title>${product.price}</Card.Title>
-          </div>
+            </div>
         </div>
       </Card>
     </div>

@@ -1,0 +1,10 @@
+.tags {
+  display: flex;
+  text-align: left;
+  align-items: left;
+  overflow: auto;
+}
+
+.edge {
+  border-radius: 5px;
+}
