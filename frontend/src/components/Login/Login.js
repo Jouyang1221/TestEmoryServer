@@ -70,6 +70,7 @@ const Login = () => {
                 form="Login"
                 disabled={isFetching}
               >
+                Login
                 {/* {isFetching ? (
                   <CircularProgress color="white" size="20px" />
                 ) : (
