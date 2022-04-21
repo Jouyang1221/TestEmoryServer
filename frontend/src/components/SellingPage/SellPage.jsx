@@ -6,8 +6,12 @@ import { Container } from "react-bootstrap";
 import { Row, Col, Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import "./sellpage.css";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const SellPage = () => {
+  const { user } = useContext(AuthContext);
+  const username = user.username;
   const desc = useRef(new Array());
   const [file, setFile] = useState(null);
   const [users, setUser] = useState({});
@@ -25,7 +29,7 @@ const SellPage = () => {
     const newProduct =
       //
       {
-        user: "562b2649b2e70464f113c04d",
+        user: user._id,
         name: name,
         image: "/images/anthro.jpg",
         description: description,
@@ -33,7 +37,7 @@ const SellPage = () => {
         price: price,
         condition: condition,
         isbn: isbn,
-        seller: "dtopchyan9",
+        seller: user.username,
         course: course,
         author: author,
         reviews: [],

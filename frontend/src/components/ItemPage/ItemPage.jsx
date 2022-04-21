@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import { Row, Col, Button } from "react-bootstrap"
+import { Row, Col, Button } from "react-bootstrap";
 import "./itempage.css";
 import ProfilePic from "./ItemPageProfilePic";
 
@@ -97,7 +97,7 @@ const ItemPage = () => {
               </h3>
               <Button variant="primary" size="lg" onClick={handleSubmit}>
                 Chat
-              </button>
+              </Button>
             </Col>
           </Row>
         </Container>
