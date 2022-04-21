@@ -97,7 +97,7 @@ const ItemPage = () => {
               </h3>
               <Button variant="primary" size="lg" onClick={handleSubmit}>
                 Chat
-              </button>
+              </Button>
             </Col>
           </Row>
         </Container>

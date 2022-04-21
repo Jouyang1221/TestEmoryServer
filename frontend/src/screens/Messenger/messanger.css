@@ -1,67 +1,66 @@
-.messanger {
-  height: calc(100vh -70px);
-  display: flex;
-  /*margin-left: 70px;
-  margin-right: 70px;*/
+.messanger{
+    height: calc(100vh -70px);
+    display: flex;
 }
-.chatMenu {
-  flex: 3.5;
+.chatMenu{
+    flex: 3.5; 
 }
 
-.chatMenuInput {
-  width: 90%;
-  padding: 10px 0;
-  border: none;
-  border-bottom: 1px solid grey;
+.chatMenuInput{
+    width: 90%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid grey;
 }
-.chatBox {
-  flex: 5.5;
-}
-
-.chatBoxWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.chatBoxTop {
-  height: 80vh;
-  overflow-y: scroll; /* not properly working 24min in vid  */
-  padding-right: 10px;
-}
-.chatBoxBottom {
-  margin-top: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.chatBox{
+    flex: 5.5;
 }
 
-.chatMessageInput {
-  width: 80%;
-  height: 90px;
-  padding: 10px;
+ .chatBoxWrapper{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;   
+     position: relative;
+ }
+.chatBoxTop{
+    height: 80vh;
+    overflow-y: scroll; /* not properly working 24min in vid  */
+    padding-right: 10px;
+}
+.chatBoxBottom{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.chatSubmitButton {
-  width: 70px;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: teal;
-  color: white;
-}
-.chatOnline {
-  flex: 3;
+.chatMessageInput{
+    width: 80%;
+    height: 90px;
+    padding: 10px;
 }
 
-.chatMenu,
-.chatBox,
-.chatOnline {
-  padding: 10px;
-  height: 100%; /* may be a problem  */
+.chatSubmitButton{
+    width: 70px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: teal;
+    color: white;
 }
-.chat-center {
-  display: flex;
-
-  justify-content: center;
+.chatOnline{
+    flex: 3;
+}
+.noConversationText{
+    position: absolute;
+    top: 8vh;
+    font-size: 50px;
+    color: grey;
+    text-align: center;
+    cursor: default;
+}
+.chatMenu, .chatBox, .chatOnline{
+    padding: 10px;
+    height: 100%; /* may be a problem  */
 }
