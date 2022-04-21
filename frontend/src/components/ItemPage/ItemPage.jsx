@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import { Row, Col, Button } from "react-bootstrap"
+import { Row, Col, Button } from "react-bootstrap";
 import "./itempage.css";
 import ProfilePic from "./ItemPageProfilePic";
 
