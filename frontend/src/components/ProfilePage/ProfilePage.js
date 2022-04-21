@@ -14,7 +14,7 @@ const ProfilePage = () => {
   const [listingsArray, setListingArray] = useState("");
 
   useEffect(() => {
-    const fetchuser = async () => {
+    const fetchuser = async () => {  
       const { data } = await axios.get(`/api/users/${username}`);
       setUser(data[0]);
       setListingArray(data[0].listings);
