@@ -1,16 +1,18 @@
 import axios from "axios";
 import React from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { Row, Col, Button } from "react-bootstrap";
 import "./itempage.css";
 import ProfilePic from "./ItemPageProfilePic";
+import { AuthContext } from "../../context/AuthContext";
 
 const ItemPage = () => {
   let navigate = useNavigate();
   const { id } = useParams();
+  const {user} = useContext(AuthContext);
   const [product, setProduct] = useState({});
   const [sellers, setSeller] = useState("");
 
@@ -25,7 +27,16 @@ const ItemPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate(`/chat`, { replace: true });
+    const conversation = {
+      senderId: user._id,
+      recieverId: product.user,
+    }
+    try{
+      await axios.post("/api/conversations", conversation);
+      navigate(`/chat`, { replace: true });
+    }catch(err){
+      console.log(err)
+    }
   };
 
   return (
