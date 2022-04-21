@@ -7,7 +7,6 @@ import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
 import SignUpScreen from "./screens/SignUpScreen";
 import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
-import ChatScreen from "./screens/ChatScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import ItemScreen from "./screens/ItemScreen";
 import HeaderSignedIn from "./components/Headers/HeaderSignedIn";
@@ -31,7 +30,7 @@ const App = () => {
             <HeaderSignedIn />
             <main>
               <Container>
-                <h1>Welcome </h1>
+                <h1>Welcome Emory Exchange</h1>
                 <HomeScreen />
               </Container>
             </main>
@@ -61,7 +60,7 @@ const App = () => {
         path="/:username"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <ProfilePage />
           </>
         }
@@ -93,7 +92,7 @@ const App = () => {
         path="/chat"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <Messanger />
           </>
         }
@@ -103,7 +102,7 @@ const App = () => {
         path="/Profile"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <ProfileScreen />
           </>
         }
@@ -121,7 +120,7 @@ const App = () => {
         path="/sell"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <SellingScreen />
           </>
         }
