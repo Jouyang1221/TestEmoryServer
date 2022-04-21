@@ -31,7 +31,7 @@ const App = () => {
             <HeaderSignedIn />
             <main>
               <Container>
-                <h1>Welcome </h1>
+                <h1>Welcome Emory Exchange</h1>
                 <HomeScreen />
               </Container>
             </main>
@@ -61,7 +61,7 @@ const App = () => {
         path="/:username"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <ProfilePage />
           </>
         }
@@ -93,7 +93,7 @@ const App = () => {
         path="/chat"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <Messanger />
           </>
         }
@@ -103,7 +103,7 @@ const App = () => {
         path="/Profile"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <ProfileScreen />
           </>
         }
@@ -121,7 +121,7 @@ const App = () => {
         path="/sell"
         element={
           <>
-            <Header />
+            <HeaderSignedIn />
             <SellingScreen />
           </>
         }
