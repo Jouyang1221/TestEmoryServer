@@ -8,6 +8,8 @@ import Form from "react-bootstrap/Form";
 import "./sellpage.css";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SellPage = () => {
   const { user } = useContext(AuthContext);
@@ -23,7 +25,7 @@ const SellPage = () => {
   const [price, setPrice] = useState(0);
   const [course, setCourse] = useState("");
   const [author, setAuthor] = useState("");
-
+  const navigate = useNavigate();
   const submitHandler = async (e) => {
     e.preventDefault();
     const newProduct =
@@ -44,7 +46,8 @@ const SellPage = () => {
       };
     try {
       await axios.post("/api/products", newProduct);
-      window.location.reload();
+
+      navigate(`/`, { replace: true });
     } catch (err) {}
   };
   const formId = "list";
