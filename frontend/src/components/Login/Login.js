@@ -4,6 +4,7 @@ import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
+import { Form, Button } from "react-bootstrap"; 
 import "./Login.css";
 // import { CircularProgress } from "@material-ui/core";
 
@@ -40,7 +41,7 @@ const Login = () => {
               <i className="fas fa-user m-2"></i>Emory Email
             </h4>
             <input
-              className=""
+              className="rounded-pill custom-input mb-2"
               type="email"
               // pattern=".+emory\.edu"
               size="25"
@@ -52,7 +53,7 @@ const Login = () => {
               <i class="fa-solid fa-lock m-2"></i>Password
             </h4>
             <input
-              className="mb-2"
+              className="rounded-pill custom-input mb-2"
               type="password"
               size="25"
               placeholder="Enter your password"
@@ -65,8 +66,8 @@ const Login = () => {
             </Link>
             <br></br>
             <div className="m-2">
-              <button
-                className="btn btn-primary btn-lg  m-2"
+              <Button
+                className="rounded-pill custom-btn m-2"
                 type="submit"
                 form="Login"
                 disabled={isFetching}
@@ -77,14 +78,14 @@ const Login = () => {
                 ) : (
                   "Log In"
                 )} */}
-              </button>
+              </Button>
             </div>
             <p className="separator">or</p>
             <div className="mid">
               <LinkContainer to="/signup">
-                <button className="btn btn-primary btn-lg  m-2">
+                <Button className="rounded-pill custom-btn m-2" >
                   Sign Up
-                </button>
+                </Button>
               </LinkContainer>
             </div>
           </form>
