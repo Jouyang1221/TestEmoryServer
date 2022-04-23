@@ -7,8 +7,10 @@ import "./HomePage.css";
 import SearchBar from "./SearchBar";
 import { LinkContainer } from "react-router-bootstrap";
 import { AuthContext } from "../../context/AuthContext";
+import { useDispatch } from "react-redux";
 
 const HomePage = () => {
+  const dispatch = useDispatch;
   const { user } = useContext(AuthContext);
   const username = user.username;
   const [products, setProducts] = useState([]);
