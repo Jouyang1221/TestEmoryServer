@@ -23,6 +23,11 @@ const HeaderSignedIn = () => {
                   Chat <i className="fas fa-solid fa-message"></i>
                 </Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/sell">
+                <Nav.Link>
+                  Sell <i className="fa-solid fa-book"></i>
+                </Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/own">
                 <Nav.Link>
                   Profile <i className="fas fa-user"></i>
