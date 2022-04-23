@@ -49,8 +49,14 @@ const App = () => {
         path="/product/:id"
         element={
           <>
-            <HeaderSignedIn />
-            <ItemScreen />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <ItemScreen />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -58,8 +64,14 @@ const App = () => {
         path="/search/:key"
         element={
           <>
-            <HeaderSignedIn />
-            <SearchPage />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <SearchPage />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -67,9 +79,15 @@ const App = () => {
         path="/:username"
         element={
           <>
-            <IfOwnProfile />
-            {/* <HeaderSignedIn />
+            {user ? (
+              <>
+                <IfOwnProfile />
+                {/* <HeaderSignedIn />
             <ProfilePage /> */}
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -77,8 +95,14 @@ const App = () => {
         path="/own/edit"
         element={
           <>
-            <HeaderSignedIn />
-            <EditProfilePage />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <EditProfilePage />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -86,8 +110,14 @@ const App = () => {
         path="/own"
         element={
           <>
-            <HeaderSignedIn />
-            <OwnProfilePage />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <OwnProfilePage />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -107,15 +137,6 @@ const App = () => {
       ></Route>
 
       <Route
-        path="/Profile"
-        element={
-          <>
-            <HeaderSignedIn />
-            <ProfileScreen />
-          </>
-        }
-      ></Route>
-      <Route
         path="/login/forgotPassword"
         element={
           <>
@@ -128,8 +149,14 @@ const App = () => {
         path="/sell"
         element={
           <>
-            <HeaderSignedIn />
-            <SellingScreen />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <SellingScreen />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>

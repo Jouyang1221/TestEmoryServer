@@ -8,8 +8,8 @@ export const LogoutButton = () => {
   const logout = () => {
     localStorage.clear();
     setLoggedOut(true);
+
     window.location.reload(false);
-    // <Navigate to="/login" push={true} />;
   };
 
   // if (loggedOut) {
