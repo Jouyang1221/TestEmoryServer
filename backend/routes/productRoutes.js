@@ -37,7 +37,6 @@ router.post("/", async (req, res) => {
 
 router.put("/", async (req, res) => {
   try {
-    console.log(req.body.id);
     const user = await Product.updateOne(
       { _id: req.body.id },
       {

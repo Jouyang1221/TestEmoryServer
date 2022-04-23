@@ -30,7 +30,6 @@ router.put("/", async (req, res) => {
   if (req.body.username === req.params.id || req.body.isAdmin) {
   }
   try {
-    console.log(req.body.username);
     const user = await User.updateOne(
       { username: req.body.username },
       {
