@@ -16,7 +16,7 @@ const Login = () => {
   const [password, setePassword] = useState("");
 
   const handleSubmit = (e) => {
-    console.log(email);
+    // console.log(email);
     e.preventDefault();
     loginCall({ email: email, password: password }, dispatch);
   };
