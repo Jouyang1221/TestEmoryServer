@@ -30,6 +30,16 @@ const OwnProfilePage = () => {
     };
     fetchProducts();
   }, []);
+  const filteredProducts = products.filter((product) => {
+    if (!product.sold) {
+      return product;
+    }
+  });
+  const soldFilteredProducts = products.filter((product) => {
+    if (product.sold) {
+      return product;
+    }
+  });
   return (
     <>
       <div className="div-wrapper2"></div>
@@ -107,7 +117,15 @@ const OwnProfilePage = () => {
           </Row>
           <h2 className="card-header subtitle mx-2 text-white">Listings</h2>
           <div className="card-body h-10">
-            {products.map((list) => (
+            {filteredProducts.map((list) => (
+              <Product product={list}></Product>
+            ))}
+          </div>
+          <h2 className="card-header subtitle mx-2 text-white">
+            Sold Listings
+          </h2>
+          <div className="card-body h-10">
+            {soldFilteredProducts.map((list) => (
               <Product product={list}></Product>
             ))}
           </div>

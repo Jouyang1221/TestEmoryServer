@@ -20,6 +20,7 @@ import { AuthContext } from "./context/AuthContext";
 import IfOwnProfile from "./screens/ifOwnProfile";
 import EditItem from "./components/ItemPage/editItem";
 import HomePage from "./components/HomePage/HomePage";
+import SoldItemPage from "./components/ItemPage/SoldItemPage";
 
 // function App() {
 const App = () => {
@@ -70,6 +71,21 @@ const App = () => {
               <>
                 <HeaderSignedIn />
                 <EditItem />
+              </>
+            ) : (
+              <Navigate to="/login" />
+            )}
+          </>
+        }
+      ></Route>
+      <Route
+        path="/product/:id/sold"
+        element={
+          <>
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <SoldItemPage />
               </>
             ) : (
               <Navigate to="/login" />

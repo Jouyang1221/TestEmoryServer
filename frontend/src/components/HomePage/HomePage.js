@@ -19,6 +19,11 @@ const HomePage = () => {
     };
     fetchProducts();
   }, []);
+  const filteredProducts = products.filter((product) => {
+    if (!product.sold) {
+      return product;
+    }
+  });
   return (
     <div className="">
       <SearchBar />
@@ -115,7 +120,7 @@ const HomePage = () => {
       </h2>
 
       <Row sm={1} md={2} lg={4} xl={5}>
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <Col>
             <Product product={product} />
           </Col>

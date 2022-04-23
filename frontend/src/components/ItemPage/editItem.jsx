@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
@@ -83,153 +83,157 @@ const EditItem = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div className="item-wrapper card" style={{}}>
-          <br></br>
+      {seller === user.username && (
+        <>
+          <form onSubmit={handleSubmit}>
+            <div className="item-wrapper card" style={{}}>
+              <br></br>
 
-          <div className="img-wrapper">
-            <img
-              src={product.image}
-              className="rounded pt-2 pb-2"
-              alt="..."
-              style={{ maxWidth: "21.9rem" }}
-            />
-            <input
-              className="mx-2"
-              type="file"
-              accept="image/*"
-              onChange={(e) => setImage(e)}
-            ></input>
-          </div>
-
-          <h1 className="txt-left w-75 card-header">
-            Title:
-            <input
-              className="mx-2"
-              type="text"
-              size="50"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />{" "}
-          </h1>
-          <div className=" w-75 card-body">
-            <h4 className="txt-left ">
-              <b>Tags: </b>
-            </h4>
-
-            <h5>
-              <b>Course: </b>
-              <input
-                type="text"
-                size="20"
-                required
-                value={course}
-                onChange={(e) => setCourse(e.target.value)}
-              />
-            </h5>
-            <h5>
-              <b>Category: </b>
-              <input
-                type="text"
-                size="20"
-                required
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              />
-            </h5>
-            <h5>
-              <b>Condition: </b>
-            </h5>
-            <select
-              value={condition}
-              required
-              onChange={(e) => setCondition(e.target.value)}
-            >
-              <option value="New">New</option>
-              <option value="Good">Good</option>
-              <option selected value="Fair">
-                Fair
-              </option>
-              <option value="Poor">Poor</option>
-            </select>
-          </div>
-
-          <ul className="list-group list-group-flush txt-left w-75 card-body">
-            <li className="list-group-item">
-              <h5>
-                <b>Author: </b>
+              <div className="img-wrapper">
+                <img
+                  src={product.image}
+                  className="rounded pt-2 pb-2"
+                  alt="..."
+                  style={{ maxWidth: "21.9rem" }}
+                />
                 <input
+                  className="mx-2"
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => setImage(e)}
+                ></input>
+              </div>
+
+              <h1 className="txt-left w-75 card-header">
+                Title:
+                <input
+                  className="mx-2"
                   type="text"
                   size="50"
                   required
-                  value={author}
-                  onChange={(e) => setAuthor(e.target.value)}
-                />
-              </h5>
-            </li>
-            <li className="list-group-item">
-              <h5>
-                <b>ISBN: </b>
-                <input
-                  type="number"
-                  size="60"
-                  required
-                  value={isbn}
-                  onChange={(e) => setIsbn(e.target.value)}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />{" "}
-              </h5>
-            </li>
-            <li className="list-group-item">
-              <h5>
-                <b>Description: </b>
-                <textarea
-                  type="number"
-                  cols="80"
-                  rows="4"
-                  required
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                />{" "}
-              </h5>
-            </li>
-          </ul>
-          <Container className="w-75">
-            <Row className="item-bar card-body">
-              <Col className="bar-col1">
-                {/* <ProfilePic username={sellers} /> */}
+              </h1>
+              <div className=" w-75 card-body">
+                <h4 className="txt-left ">
+                  <b>Tags: </b>
+                </h4>
 
-                <Link
-                  className=" card-subtitle text seller-link"
-                  title={product.seller}
-                  to={`/${product.seller}`}
-                >
-                  <h4 className="mx-2">
-                    <b> {seller}</b>
-                  </h4>
-                </Link>
-              </Col>
-              <Col className="bar-col2">
-                <h3 className="m-5">
-                  Price: $
+                <h5>
+                  <b>Course: </b>
                   <input
-                    type="number"
-                    className="mx-2"
-                    step="0.01"
-                    value={price}
+                    type="text"
+                    size="20"
                     required
-                    onChange={(e) => setPrice(e.target.value)}
+                    value={course}
+                    onChange={(e) => setCourse(e.target.value)}
                   />
-                </h3>
-                {/* <Button variant="primary" size="lg" onClick={handleSubmit}>
+                </h5>
+                <h5>
+                  <b>Category: </b>
+                  <input
+                    type="text"
+                    size="20"
+                    required
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                  />
+                </h5>
+                <h5>
+                  <b>Condition: </b>
+                </h5>
+                <select
+                  value={condition}
+                  required
+                  onChange={(e) => setCondition(e.target.value)}
+                >
+                  <option value="New">New</option>
+                  <option value="Good">Good</option>
+                  <option selected value="Fair">
+                    Fair
+                  </option>
+                  <option value="Poor">Poor</option>
+                </select>
+              </div>
+
+              <ul className="list-group list-group-flush txt-left w-75 card-body">
+                <li className="list-group-item">
+                  <h5>
+                    <b>Author: </b>
+                    <input
+                      type="text"
+                      size="50"
+                      required
+                      value={author}
+                      onChange={(e) => setAuthor(e.target.value)}
+                    />
+                  </h5>
+                </li>
+                <li className="list-group-item">
+                  <h5>
+                    <b>ISBN: </b>
+                    <input
+                      type="number"
+                      size="60"
+                      required
+                      value={isbn}
+                      onChange={(e) => setIsbn(e.target.value)}
+                    />{" "}
+                  </h5>
+                </li>
+                <li className="list-group-item">
+                  <h5>
+                    <b>Description: </b>
+                    <textarea
+                      type="number"
+                      cols="80"
+                      rows="4"
+                      required
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                    />{" "}
+                  </h5>
+                </li>
+              </ul>
+              <Container className="w-75">
+                <Row className="item-bar card-body">
+                  <Col className="bar-col1">
+                    {/* <ProfilePic username={sellers} /> */}
+
+                    <Link
+                      className=" card-subtitle text seller-link"
+                      title={product.seller}
+                      to={`/${product.seller}`}
+                    >
+                      <h4 className="mx-2">
+                        <b> {seller}</b>
+                      </h4>
+                    </Link>
+                  </Col>
+                  <Col className="bar-col2">
+                    <h3 className="m-5">
+                      Price: $
+                      <input
+                        type="number"
+                        className="mx-2"
+                        step="0.01"
+                        value={price}
+                        required
+                        onChange={(e) => setPrice(e.target.value)}
+                      />
+                    </h3>
+                    {/* <Button variant="primary" size="lg" onClick={handleSubmit}>
                 Chat
               </Button> */}
-              </Col>
-              <input type="submit"></input>
-            </Row>
-          </Container>
-        </div>
-      </form>
+                  </Col>
+                  <input type="submit"></input>
+                </Row>
+              </Container>
+            </div>
+          </form>
+        </>
+      )}
     </>
   );
 };

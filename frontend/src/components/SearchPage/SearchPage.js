@@ -24,11 +24,12 @@ const SearchPage = () => {
     var isbnNum = product.isbn.toString();
 
     if (
-      product.name.toLowerCase().includes(search) ||
-      isbnNum.toLowerCase().includes(search) ||
-      product.category.toLowerCase().includes(search) ||
-      product.author.toLowerCase().includes(search) ||
-      product.course.toLowerCase().includes(search)
+      !product.sold &&
+      (product.name.toLowerCase().includes(search) ||
+        isbnNum.toLowerCase().includes(search) ||
+        product.category.toLowerCase().includes(search) ||
+        product.author.toLowerCase().includes(search) ||
+        product.course.toLowerCase().includes(search))
     ) {
       return product;
     }
@@ -60,16 +61,6 @@ const SearchPage = () => {
           </Row>
         </div>
       </div>
-    );
-  } else {
-    return (
-      <Row sm={1} md={2} lg={4} xl={5}>
-        {products.map((allproduct) => (
-          <Col>
-            <Product product={allproduct} />
-          </Col>
-        ))}
-      </Row>
     );
   }
 };
