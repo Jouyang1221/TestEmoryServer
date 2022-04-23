@@ -6,7 +6,9 @@ const Footer = () => {
     <footer>
       <Container>
         <Row>
-          <Col className="text-center py-3">Footer</Col>
+          <Col className="text-center py-3">
+            <a href="mailto:admin@emoryexchange.com">Contact Us</a>
+          </Col>
         </Row>
       </Container>
     </footer>
