@@ -11,6 +11,7 @@ const products = [
     seller: "dtopchyan9",
     course: "ANT 344",
     author: "Emily A. Schultz",
+    sold: false,
   },
   {
     // _id: "2",
@@ -24,6 +25,7 @@ const products = [
     seller: "jouyan8",
     course: "CS 344",
     author: "Robert Sedgewick, Kevin Wayne",
+    sold: false,
   },
   {
     // _id: "3",
@@ -37,6 +39,7 @@ const products = [
     seller: "jwang1",
     course: "MATH 344",
     author: "James Stewart",
+    sold: false,
   },
   {
     // _id: "4",
@@ -50,6 +53,7 @@ const products = [
     seller: "bmandell2",
     course: "CHEM 344",
     author: "Nivaldo Tro",
+    sold: false,
   },
   {
     // _id: "5",
@@ -63,6 +67,7 @@ const products = [
     seller: "kseo12",
     course: "ECON 244",
     author: "Michael Parkin",
+    sold: false,
   },
   {
     // _id: "6",
@@ -76,6 +81,7 @@ const products = [
     seller: "jperez12",
     course: "PHYS 344",
     author: "Hugh D. Young",
+    sold: false,
   },
   {
     // _id: "7",
@@ -89,6 +95,7 @@ const products = [
     seller: "kseo22",
     course: "PSYC 124",
     author: "Paul B. Pedersen",
+    sold: false,
   },
   {
     // _id: "8",
@@ -102,6 +109,7 @@ const products = [
     seller: "jchoi22",
     course: "SOC 323",
     author: "W. LaVerne Thomas",
+    sold: false,
   },
   {
     // _id: "9",
@@ -115,6 +123,7 @@ const products = [
     seller: "jryan8",
     course: "CPLT 101",
     author: "Cherríe Moraga",
+    sold: false,
   },
   {
     // _id: "10",
@@ -128,6 +137,7 @@ const products = [
     seller: "kzhou2",
     course: "BIO 320",
     author: "Lisa Urry ",
+    sold: false,
   },
 ];
 
