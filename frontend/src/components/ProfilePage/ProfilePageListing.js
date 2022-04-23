@@ -177,13 +177,9 @@ const Product = ({ product }) => {
                 </button>
               </div>
             </div>
-            <div className="col-sm-5 ">
+            <div className="col-sm-5 text-center ">
               {user.username === product.seller && (
-                <button
-                  className="btn btn-secondary"
-                  style={{ position: "absolute", top: "5%", left: "74%" }}
-                  onClick={onClickNotSold}
-                >
+                <button className="btn btn-secondary" onClick={onClickNotSold}>
                   Mark as not sold
                 </button>
               )}
