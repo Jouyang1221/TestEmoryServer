@@ -7,8 +7,12 @@ import { Row, Col, Container } from "react-bootstrap";
 import Product from "./ProfilePageListing";
 import Rating1 from "../userStars/userStars";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const ProfilePage = () => {
+  const { user } = useContext(AuthContext);
+
   const { username } = useParams();
   const [users, setUser] = useState({});
   const [listingsArray, setListingArray] = useState("");
@@ -51,7 +55,7 @@ const ProfilePage = () => {
             />
           </div> */}
               <div className="card-body">
-                <h5 className="-title mx-2">
+                <h5 className="card-title mx-2">
                   <b>Bio:</b>
                 </h5>
                 <p className="card-body">{users.bio}</p>
@@ -66,13 +70,13 @@ const ProfilePage = () => {
               <div className="card-body">
                 {/* Username */}
 
-                <h7 className="card-title text-muted">
+                <h6 className="card-title text-muted">
                   <i className="fa-solid fa-phone"></i> {users.phone}
-                </h7>
+                </h6>
                 <br></br>
-                <h7 className="card-title text-muted">
+                <h6 className="card-title text-muted">
                   <i className="fa-solid fa-envelope"></i> {users.email}
-                </h7>
+                </h6>
               </div>
 
               <h5 className="card-header subtitle mx-2 text-white">About Me</h5>

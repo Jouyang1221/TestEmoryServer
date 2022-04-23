@@ -31,7 +31,7 @@ const Product = ({ productNumber }) => {
   }, []);
 
   return (
-    <div clasName="wrapper row">
+    <div className="wrapper row">
       <Card className="edge my-2 p-2">
         <div className="row">
           <div className="col-sm-4">

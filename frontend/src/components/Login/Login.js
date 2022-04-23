@@ -4,7 +4,7 @@ import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
-import { Form, Button } from "react-bootstrap"; 
+import { Form, Button } from "react-bootstrap";
 import "./Login.css";
 // import { CircularProgress } from "@material-ui/core";
 
@@ -37,7 +37,7 @@ const Login = () => {
         <div className="fbody">
           <form id="Login" onSubmit={handleSubmit}>
             {/*<h1 className="login-wrapper">Logo</h1>*/}
-            <h4 className = "m-1">
+            <h4 className="m-1">
               <i className="fas fa-user m-2"></i>Emory Email
             </h4>
             <input
@@ -50,7 +50,7 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
             ></input>
             <h4 className="m-2">
-              <i class="fa-solid fa-lock m-2"></i>Password
+              <i className="fa-solid fa-lock m-2"></i>Password
             </h4>
             <input
               className="rounded-pill custom-input mb-2"
@@ -83,15 +83,13 @@ const Login = () => {
             <p className="separator">or</p>
             <div className="mid">
               <LinkContainer to="/signup">
-                <Button className="rounded-pill custom-btn m-2" >
-                  Sign Up
-                </Button>
+                <Button className="rounded-pill custom-btn m-2">Sign Up</Button>
               </LinkContainer>
             </div>
           </form>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 

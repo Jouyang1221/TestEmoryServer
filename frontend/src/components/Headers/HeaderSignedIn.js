@@ -8,7 +8,7 @@ const HeaderSignedIn = () => {
   return (
     <header>
       <>
-        <Navbar className="header" variant="dark" collapseOnSEelect>
+        <Navbar className="header" variant="dark" collapseOnSelect>
           <Container>
             <LinkContainer to="/">
               <Navbar.Brand>Emory Exchange</Navbar.Brand>

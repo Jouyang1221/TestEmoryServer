@@ -17,6 +17,7 @@ import SearchPage from "./components/SearchPage/SearchPage";
 import Messanger from "./screens/Messenger/Messanger";
 import OwnProfilePage from "./components/ProfilePage/OwnProfilePage";
 import { AuthContext } from "./context/AuthContext";
+import IfOwnProfile from "./screens/ifOwnProfile";
 
 // function App() {
 const App = () => {
@@ -27,14 +28,20 @@ const App = () => {
         path="/"
         element={
           <>
-            <HeaderSignedIn />
-            <main>
-              <Container>
-                <h1>Welcome Emory Exchange</h1>
-                <HomeScreen />
-              </Container>
-            </main>
-            <Footer />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <main>
+                  <Container>
+                    <h1>Welcome Emory Exchange</h1>
+                    <HomeScreen />
+                  </Container>
+                </main>
+                <Footer />)
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -60,8 +67,9 @@ const App = () => {
         path="/:username"
         element={
           <>
-            <HeaderSignedIn />
-            <ProfilePage />
+            <IfOwnProfile />
+            {/* <HeaderSignedIn />
+            <ProfilePage /> */}
           </>
         }
       ></Route>
