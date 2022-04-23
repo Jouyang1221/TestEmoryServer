@@ -1,11 +1,11 @@
 import ReactRoundedImage from "react-rounded-image";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./OwnProfilePage.css";
 import Product from "./ProfilePageListing";
-import Rating1 from "../userStars/userStars";
-import { Row, Col, Container } from "react-bootstrap";
+// import Rating1 from "../userStars/userStars";
+import { Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
@@ -98,7 +98,7 @@ const OwnProfilePage = () => {
                 </li>
                 <li className="list-group-item">
                   <h5>
-                    <strong>Year: </strong>
+                    <strong>Grad Year: </strong>
                     {users.year}
                   </h5>
                 </li>

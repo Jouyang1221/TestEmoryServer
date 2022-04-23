@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./ProfilePage.css";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Product from "./ProfilePageListing";
 
-import Rating1 from "../userStars/userStars";
+// import Rating1 from "../userStars/userStars";
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
@@ -22,7 +22,6 @@ const ProfilePage = () => {
     const fetchuser = async () => {
       const { data } = await axios.get(`/api/users/${username}`);
       setUser(data[0]);
-
     };
     fetchuser();
   }, []);
@@ -96,7 +95,7 @@ const ProfilePage = () => {
                 </li>
                 <li className="list-group-item">
                   <h5>
-                    <strong>Year: </strong>
+                    <strong>Grad Year: </strong>
                     {users.year}
                   </h5>
                 </li>
@@ -110,7 +109,6 @@ const ProfilePage = () => {
             ))}
 
             {/* <Product productNumber={users.id}></Product> */}
-
           </div>
         </div>
       </div>

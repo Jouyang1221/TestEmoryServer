@@ -1,17 +1,12 @@
 import axios from "axios";
 import React from "react";
-import {
-  Link,
-  useNavigate,
-  useParams,
-  useResolvedPath,
-} from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "./itempage.css";
-import ProfilePic from "./ItemPageProfilePic";
+// import ProfilePic from "./ItemPageProfilePic";
 import { AuthContext } from "../../context/AuthContext";
 import mongoose from "mongoose";
 

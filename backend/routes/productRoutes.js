@@ -14,7 +14,7 @@ router.route("/:id").get(getProductById);
 
 router.get("/profile/:username", async (req, res) => {
   try {
-    console.log(req.params.username);
+    //console.log(req.params.username);
     const userna = req.params["username"];
     const products = await Product.find({})
       .where("seller")

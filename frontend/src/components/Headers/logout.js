@@ -1,13 +1,13 @@
-import { Navigate } from "react-router-dom";
-import { useState } from "react";
+// import { Navigate } from "react-router-dom";
+// import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./Header.css";
 export const LogoutButton = () => {
-  const [loggedOut, setLoggedOut] = useState(false);
+  // const [loggedOut, setLoggedOut] = useState(false);
 
   const logout = () => {
     localStorage.clear();
-    setLoggedOut(true);
+    // setLoggedOut(true);
 
     window.location.reload(false);
   };

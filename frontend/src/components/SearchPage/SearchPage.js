@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Product from "../ProductLayouts/Product";
 import { useParams } from "react-router-dom";
-// import products from "../products";
-import { PureComponent } from "react";
 import axios from "axios";
 import "./SearchPage.css";
 import SearchBar from "../HomePage/SearchBar";
-import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 const SearchPage = () => {
   const { key } = useParams();
@@ -25,6 +22,7 @@ const SearchPage = () => {
 
   const filteredProducts = products.filter((product) => {
     var isbnNum = product.isbn.toString();
+
     if (
       product.name.toLowerCase().includes(search) ||
       isbnNum.toLowerCase().includes(search) ||
@@ -34,32 +32,45 @@ const SearchPage = () => {
     ) {
       return product;
     }
+    return null;
   });
 
-  return (
-    <div>
-      <div className="">
-        <br></br>
-        <SearchBar />
-        <h2>{key}</h2>
-        <br></br>
+  if (search !== "" || search !== null) {
+    return (
+      <div>
+        <div className="">
+          <br></br>
+          <SearchBar />
+          <h2>{key}</h2>
+          <br></br>
 
-        <h2
-          className="card-header text-white "
-          style={{ backgroundColor: "#1a4a5a" }}
-        >
-          Search Results
-        </h2>
+          <h2
+            className="card-header text-white "
+            style={{ backgroundColor: "#1a4a5a" }}
+          >
+            Search Results
+          </h2>
 
-        <Row sm={1} md={2} lg={4} xl={5}>
-          {filteredProducts.map((product) => (
-            <Col>
-              <Product product={product} />
-            </Col>
-          ))}
-        </Row>
+          <Row sm={1} md={2} lg={4} xl={5}>
+            {filteredProducts.map((product) => (
+              <Col>
+                <Product product={product} />
+              </Col>
+            ))}
+          </Row>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <Row sm={1} md={2} lg={4} xl={5}>
+        {products.map((allproduct) => (
+          <Col>
+            <Product product={allproduct} />
+          </Col>
+        ))}
+      </Row>
+    );
+  }
 };
 export default SearchPage;

@@ -1,11 +1,11 @@
 import ReactRoundedImage from "react-rounded-image";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./ProfilePage.css";
-import { Row, Col, Container } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import Rating1 from "../userStars/userStars";
+import { Row, Col } from "react-bootstrap";
+
+// import Rating1 from "../userStars/userStars";
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";

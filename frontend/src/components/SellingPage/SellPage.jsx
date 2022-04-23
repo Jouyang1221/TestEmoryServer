@@ -1,22 +1,18 @@
 import axios from "axios";
-import React, { Component } from "react";
+import React from "react";
 import { useState } from "react";
-import { useRef } from "react";
 import { Container } from "react-bootstrap";
 import { Row, Col, Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import "./sellpage.css";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const SellPage = () => {
   const { user } = useContext(AuthContext);
-  const username = user.username;
-  const desc = useRef(new Array());
   const [file, setFile] = useState(null);
-  const [users, setUser] = useState({});
+  // const [users, setUser] = useState({});
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");

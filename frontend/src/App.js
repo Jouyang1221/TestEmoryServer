@@ -19,6 +19,7 @@ import OwnProfilePage from "./components/ProfilePage/OwnProfilePage";
 import { AuthContext } from "./context/AuthContext";
 import IfOwnProfile from "./screens/ifOwnProfile";
 import EditItem from "./components/ItemPage/editItem";
+import HomePage from "./components/HomePage/HomePage";
 
 // function App() {
 const App = () => {
@@ -41,7 +42,7 @@ const App = () => {
                 <Footer />)
               </>
             ) : (
-              <LoginScreen />
+              <Navigate to="/login" />
             )}
           </>
         }
@@ -56,7 +57,7 @@ const App = () => {
                 <ItemScreen />
               </>
             ) : (
-              <LoginScreen />
+              <Navigate to="/login" />
             )}
           </>
         }
@@ -71,7 +72,7 @@ const App = () => {
                 <EditItem />
               </>
             ) : (
-              <LoginScreen />
+              <Navigate to="/login" />
             )}
           </>
         }
@@ -87,7 +88,21 @@ const App = () => {
                 <SearchPage />
               </>
             ) : (
-              <LoginScreen />
+              <Navigate to="/login" />
+            )}
+          </>
+        }
+      ></Route>
+      <Route
+        path="/search/"
+        element={
+          <>
+            {user ? (
+              <>
+                <Navigate to="/" />
+              </>
+            ) : (
+              <Navigate to="/login" />
             )}
           </>
         }
@@ -103,7 +118,7 @@ const App = () => {
             <ProfilePage /> */}
               </>
             ) : (
-              <LoginScreen />
+              <Navigate to="/login" />
             )}
           </>
         }
@@ -118,7 +133,7 @@ const App = () => {
                 <EditProfilePage />
               </>
             ) : (
-              <LoginScreen />
+              <Navigate to="/login" />
             )}
           </>
         }
@@ -133,14 +148,14 @@ const App = () => {
                 <OwnProfilePage />
               </>
             ) : (
-              <LoginScreen />
+              <Navigate to="/login" />
             )}
           </>
         }
       ></Route>
       <Route
         path="/login"
-        // element={<LoginScreen />}
+        // element={ <Navigate to="/login" />}
         element={<>{user ? <Navigate to="/" /> : <LoginScreen />}</>}
       ></Route>
       <Route
@@ -172,7 +187,7 @@ const App = () => {
                 <SellingScreen />
               </>
             ) : (
-              <LoginScreen />
+              <Navigate to="/login" />
             )}
           </>
         }

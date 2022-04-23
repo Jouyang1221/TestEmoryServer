@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import HomePage from "../components/HomePage/HomePage";
 
 const HomeScreen = () => {

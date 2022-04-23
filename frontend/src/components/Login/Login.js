@@ -1,18 +1,16 @@
-import React, { useContext, useRef, Component, useState } from "react";
-import Image from "react-bootstrap/Image";
+import React, { useContext, useState } from "react";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
-import { Form, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./Login.css";
 // import { CircularProgress } from "@material-ui/core";
 
 const Login = () => {
   const { isFetching, dispatch } = useContext(AuthContext);
   const [email, setEmail] = useState("");
-  // const email = useRef();
-  // const password = useRef();
+
   const [password, setePassword] = useState("");
 
   const handleSubmit = (e) => {

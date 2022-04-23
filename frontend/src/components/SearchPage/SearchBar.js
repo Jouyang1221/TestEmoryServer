@@ -27,6 +27,7 @@ const SearchBar = () => {
         <FormControl
           className="rounded-pill"
           type="text"
+          value=" a"
           placeholder="Search: Textbook, Author, ISBN"
           aria-label="Textbook, Author, ISBN"
           aria-describedby="basic-addon2"

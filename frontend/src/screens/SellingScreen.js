@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import SellPage from "../components/SellingPage/SellPage";
 
 const SellingScreen = () => {

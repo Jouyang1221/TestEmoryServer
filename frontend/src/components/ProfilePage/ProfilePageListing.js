@@ -1,10 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import { useEffect } from "react";
-import { useState } from "react";
 import "./ProfilePageListing.css";
-import axios from "axios";
 
 const Product = ({ product }) => {
   const navigate = useNavigate();

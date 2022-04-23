@@ -29,7 +29,7 @@ router.post("/register", async (req, res) => {
 //LOGIN
 router.post("/login", async (req, res) => {
   try {
-    console.log(req.body.email);
+    // console.log(req.body.email);
     const user = await User.findOne({ email: req.body.email }).exec();
 
     if (!user) {
