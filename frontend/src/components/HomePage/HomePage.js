@@ -1,24 +1,24 @@
 import React, { useState, useEffect, useContext } from "react";
-
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "../ProductLayouts/Product";
-import { listProducts } from "../../actions/productActions";
+// import products from "../products";
+import axios from "axios";
 import "./HomePage.css";
 import SearchBar from "./SearchBar";
 import { LinkContainer } from "react-router-bootstrap";
 import { AuthContext } from "../../context/AuthContext";
-import { useDispatch } from "react-redux";
 
 const HomePage = () => {
-  const dispatch = useDispatch;
   const { user } = useContext(AuthContext);
   const username = user.username;
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
-    dispatch(listProducts());
-  }, [dispatch]);
-
+    const fetchProducts = async () => {
+      const { data } = await axios.get("/api/products");
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
   return (
     <div className="">
       <SearchBar />
