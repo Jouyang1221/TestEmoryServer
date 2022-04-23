@@ -36,11 +36,10 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/", async (req, res) => {
-  if (req.body.username === req.params.id || req.body.isAdmin) {
-  }
   try {
+    console.log(req.body.id);
     const user = await Product.updateOne(
-      { id: req.body.id },
+      { _id: req.body.id },
       {
         $set: req.body,
       }

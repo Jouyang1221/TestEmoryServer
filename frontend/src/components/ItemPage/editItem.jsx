@@ -13,6 +13,7 @@ import { Row, Col, Button } from "react-bootstrap";
 import "./itempage.css";
 import ProfilePic from "./ItemPageProfilePic";
 import { AuthContext } from "../../context/AuthContext";
+import mongoose from "mongoose";
 
 const EditItem = () => {
   let navigate = useNavigate();
@@ -65,6 +66,7 @@ const EditItem = () => {
     // axios.post("api/uploadfile", formData);
 
     const updatedItem = {
+      id: mongoose.Types.ObjectId(id),
       name: name,
       image: product.image,
       description: description,
@@ -78,7 +80,8 @@ const EditItem = () => {
     };
 
     try {
-      await axios.put("/api/products", updatedItem);
+      console.log(id);
+      await axios.put("/api/products/", updatedItem);
       navigate(`/product/${product._id}`, { replace: true });
     } catch (err) {}
   };
