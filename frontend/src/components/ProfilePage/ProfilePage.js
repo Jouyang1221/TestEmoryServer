@@ -15,17 +15,22 @@ const ProfilePage = () => {
 
   const { username } = useParams();
   const [users, setUser] = useState({});
-  const [listingsArray, setListingArray] = useState("");
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchuser = async () => {
       const { data } = await axios.get(`/api/users/${username}`);
       setUser(data[0]);
-      setListingArray(data[0].listings);
     };
     fetchuser();
   }, []);
-
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get(`/api/products/profile/${username}`);
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
   return (
     <>
       <div className="div-wrapper2"></div>
@@ -98,7 +103,9 @@ const ProfilePage = () => {
           </Row>
           <h2 className="card-header subtitle mx-2 text-white">Listings</h2>
           <div className="card-body h-10">
-            <Product productNumber={listingsArray}></Product>
+            {products.map((list) => (
+              <Product product={list}></Product>
+            ))}
           </div>
         </div>
       </div>

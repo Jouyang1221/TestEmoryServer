@@ -6,9 +6,8 @@ import { useState } from "react";
 import "./ProfilePageListing.css";
 import axios from "axios";
 
-const Product = ({ productNumber }) => {
+const Product = ({ product }) => {
   const navigate = useNavigate();
-  const [product, setProduct] = useState({});
 
   const onClickCat = () => {
     try {
@@ -22,18 +21,18 @@ const Product = ({ productNumber }) => {
     } catch (err) {}
   };
 
-  useEffect(() => {
-    const fetchproduct = async () => {
-      const { data } = await axios.get(`/api/products/${productNumber}`);
-      setProduct(data[0]);
-    };
-    fetchproduct();
-  }, []);
+  // useEffect(() => {
+  //   const fetchproduct = async () => {
+  //     const { data } = await axios.get(`/api/products/${productNumber}`);
+  //     setProduct(data[0]);
+  //   };
+  //   fetchproduct();
+  // }, []);
 
   return (
-    <div className="wrapper row">
+    <div className="wrapper  row">
       <Card className="edge my-2 p-2">
-        <div className="row">
+        <div className="row w-75">
           <div className="col-sm-4">
             <Link to={`/product/${product._id}`}>
               <Card.Img
