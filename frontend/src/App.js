@@ -17,6 +17,8 @@ import SearchPage from "./components/SearchPage/SearchPage";
 import Messanger from "./screens/Messenger/Messanger";
 import OwnProfilePage from "./components/ProfilePage/OwnProfilePage";
 import { AuthContext } from "./context/AuthContext";
+import IfOwnProfile from "./screens/ifOwnProfile";
+import EditItem from "./components/ItemPage/editItem";
 
 // function App() {
 const App = () => {
@@ -27,14 +29,20 @@ const App = () => {
         path="/"
         element={
           <>
-            <HeaderSignedIn />
-            <main>
-              <Container>
-                <h1>Welcome Emory Exchange</h1>
-                <HomeScreen />
-              </Container>
-            </main>
-            <Footer />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <main>
+                  <Container>
+                    <h1>Welcome Emory Exchange</h1>
+                    <HomeScreen />
+                  </Container>
+                </main>
+                <Footer />)
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -42,17 +50,45 @@ const App = () => {
         path="/product/:id"
         element={
           <>
-            <HeaderSignedIn />
-            <ItemScreen />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <ItemScreen />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
       <Route
+        path="/product/:id/edit"
+        element={
+          <>
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <EditItem />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
+          </>
+        }
+      ></Route>
+
+      <Route
         path="/search/:key"
         element={
           <>
-            <HeaderSignedIn />
-            <SearchPage />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <SearchPage />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -60,8 +96,15 @@ const App = () => {
         path="/:username"
         element={
           <>
-            <HeaderSignedIn />
-            <ProfilePage />
+            {user ? (
+              <>
+                <IfOwnProfile />
+                {/* <HeaderSignedIn />
+            <ProfilePage /> */}
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -69,8 +112,14 @@ const App = () => {
         path="/own/edit"
         element={
           <>
-            <HeaderSignedIn />
-            <EditProfilePage />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <EditProfilePage />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -78,8 +127,14 @@ const App = () => {
         path="/own"
         element={
           <>
-            <HeaderSignedIn />
-            <OwnProfilePage />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <OwnProfilePage />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>
@@ -99,15 +154,6 @@ const App = () => {
       ></Route>
 
       <Route
-        path="/Profile"
-        element={
-          <>
-            <HeaderSignedIn />
-            <ProfileScreen />
-          </>
-        }
-      ></Route>
-      <Route
         path="/login/forgotPassword"
         element={
           <>
@@ -120,8 +166,14 @@ const App = () => {
         path="/sell"
         element={
           <>
-            <HeaderSignedIn />
-            <SellingScreen />
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <SellingScreen />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
           </>
         }
       ></Route>

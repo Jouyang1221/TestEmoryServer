@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "../ProductLayouts/Product";
 // import products from "../products";
@@ -6,8 +6,11 @@ import axios from "axios";
 import "./HomePage.css";
 import SearchBar from "./SearchBar";
 import { LinkContainer } from "react-router-bootstrap";
+import { AuthContext } from "../../context/AuthContext";
 
 const HomePage = () => {
+  const { user } = useContext(AuthContext);
+  const username = user.username;
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
@@ -28,7 +31,7 @@ const HomePage = () => {
         >
           Popular Subjects
         </h2>
-        <Container className = "">
+        <Container className="">
           <Row
             className="justify-content-md-center"
             sm={1}

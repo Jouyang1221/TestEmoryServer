@@ -4,6 +4,7 @@ import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
 import "./Login.css";
 // import { CircularProgress } from "@material-ui/core";
 
@@ -22,24 +23,25 @@ const Login = () => {
 
   return (
     <div className="login-wrapper">
-      <div className="row rounded login-background d-flex align-items-center">
-        <div className="col-sm-7  ">
+      <div className="row login-background d-flex align-items-center">
+        <div className="logo-wrapper">
           <img
-            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5e0c920b-a803-4ac2-8677-0de46a185c65/d3rbyn0-7856baa9-a0fe-4f8d-82a2-4aeab9075941.jpg/v1/fill/w_900,h_1350,q_75,strp/emory_iphone_background_by_oc2011_d3rbyn0-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTM1MCIsInBhdGgiOiJcL2ZcLzVlMGM5MjBiLWE4MDMtNGFjMi04Njc3LTBkZTQ2YTE4NWM2NVwvZDNyYnluMC03ODU2YmFhOS1hMGZlLTRmOGQtODJhMi00YWVhYjkwNzU5NDEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.CCBq7VbOBWOyRmxiD8aGEu9XVx_ZslJk7K01uh78HK0"
+            src="https://coursera-university-assets.s3.amazonaws.com/f8/5c185343dfb525fda5abae3e7216df/emory_square_coursera.png"
             className="rounded"
             alt="..."
-            style={{ maxWidth: "21.9rem" }}
+            style={{ maxWidth: "5rem" }}
           />
+          <h1>Emory Exchange</h1>
         </div>
 
-        <div className="col-sm-5">
+        <div className="fbody">
           <form id="Login" onSubmit={handleSubmit}>
-            <h1 className="login-wrapper">Logo</h1>
+            {/*<h1 className="login-wrapper">Logo</h1>*/}
             <h4 className="m-1">
               <i className="fas fa-user m-2"></i>Emory Email
             </h4>
             <input
-              className="m-2"
+              className="rounded-pill custom-input mb-2"
               type="email"
               // pattern=".+emory\.edu"
               size="25"
@@ -48,10 +50,10 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
             ></input>
             <h4 className="m-2">
-              <i class="fa-solid fa-lock m-2"></i>Password
+              <i className="fa-solid fa-lock m-2"></i>Password
             </h4>
             <input
-              className="m-2"
+              className="rounded-pill custom-input mb-2"
               type="password"
               size="25"
               placeholder="Enter your password"
@@ -63,9 +65,9 @@ const Login = () => {
               Forgot Password?
             </Link>
             <br></br>
-            <div className="login-wrapper m-2">
-              <button
-                className="login-wrapper btn btn-primary btn-lg  m-2"
+            <div className="m-2">
+              <Button
+                className="rounded-pill custom-btn m-2"
                 type="submit"
                 form="Login"
                 disabled={isFetching}
@@ -76,14 +78,12 @@ const Login = () => {
                 ) : (
                   "Log In"
                 )} */}
-              </button>
+              </Button>
             </div>
             <p className="separator">or</p>
-            <div className="login-wrapper">
+            <div className="mid">
               <LinkContainer to="/signup">
-                <button className="btn btn-primary btn-lg login-wrapper m-2">
-                  Sign Up
-                </button>
+                <Button className="rounded-pill custom-btn m-2">Sign Up</Button>
               </LinkContainer>
             </div>
           </form>
