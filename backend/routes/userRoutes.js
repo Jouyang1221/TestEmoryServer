@@ -10,6 +10,8 @@ import {
 //router.get("/", getUserList);
 router.get("/:username", getUserListByUsername);
 
+
+//getting user info given userId 
 router.get("/", async (req, res) => {
   const userId = req.query.userId;
   const username = req.query.username;

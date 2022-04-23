@@ -9,11 +9,11 @@ const userSchema = mongoose.Schema(
     },
     image: {
       type: String,
-      required: true,
+      required: false,
     },
     name: {
       type: String,
-      required: true,
+      required: false,
     },
     email: {
       type: String,
@@ -22,27 +22,27 @@ const userSchema = mongoose.Schema(
     },
     phone: {
       type: String,
-      required: true,
+      required: false,
     },
     bio: {
       type: String,
-      required: true,
+      required: false,
     },
     major: {
       type: String,
-      required: true,
+      required: false,
     },
     year: {
       type: Number,
-      required: true,
+      required: false,
     },
     rating: {
       type: Number,
-      required: true,
+      required: false,
     },
     reviews: {
       type: Number,
-      required: true,
+      required: false,
     },
     password: {
       type: String,
@@ -50,7 +50,7 @@ const userSchema = mongoose.Schema(
     },
     listings: {
       type: Number,
-      required: true,
+      required: false,
       default: 0,
     },
   },
