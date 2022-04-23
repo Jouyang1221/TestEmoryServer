@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
+
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "../ProductLayouts/Product";
-// import products from "../products";
-import axios from "axios";
+import { listProducts } from "../../actions/productActions";
 import "./HomePage.css";
 import SearchBar from "./SearchBar";
 import { LinkContainer } from "react-router-bootstrap";
@@ -12,13 +12,10 @@ const HomePage = () => {
   const { user } = useContext(AuthContext);
   const username = user.username;
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axios.get("/api/products");
-      setProducts(data);
-    };
-    fetchProducts();
-  }, []);
+    dispatch(listProducts());
+  }, [dispatch]);
 
   return (
     <div className="">

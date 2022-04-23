@@ -5,6 +5,7 @@ import { useState } from "react";
 import "./ProfilePage.css";
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "./ProfilePageListing";
+
 import Rating1 from "../userStars/userStars";
 import axios from "axios";
 import { useContext } from "react";
@@ -21,6 +22,7 @@ const ProfilePage = () => {
     const fetchuser = async () => {
       const { data } = await axios.get(`/api/users/${username}`);
       setUser(data[0]);
+
     };
     fetchuser();
   }, []);
@@ -106,6 +108,9 @@ const ProfilePage = () => {
             {products.map((list) => (
               <Product product={list}></Product>
             ))}
+
+            {/* <Product productNumber={users.id}></Product> */}
+
           </div>
         </div>
       </div>
