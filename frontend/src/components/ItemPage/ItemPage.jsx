@@ -10,9 +10,20 @@ import ProfilePic from "./ItemPageProfilePic";
 import { AuthContext } from "../../context/AuthContext";
 
 const ItemPage = () => {
+  const onClickCat = () => {
+    try {
+      navigate(`/search/${product.category}`, { replace: true });
+    } catch (err) {}
+  };
+
+  const onClickCourse = () => {
+    try {
+      navigate(`/search/${product.course}`, { replace: true });
+    } catch (err) {}
+  };
   let navigate = useNavigate();
   const { id } = useParams();
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [product, setProduct] = useState({});
   const [sellers, setSeller] = useState("");
 
@@ -30,12 +41,12 @@ const ItemPage = () => {
     const conversation = {
       senderId: user._id,
       recieverId: product.user,
-    }
-    try{
+    };
+    try {
       await axios.post("/api/conversations", conversation);
       navigate(`/chat`, { replace: true });
-    }catch(err){
-      console.log(err)
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -56,10 +67,16 @@ const ItemPage = () => {
           <h4 className="txt-left ">
             <b>Tags: </b>
           </h4>
-          <button className="tag-bg rounded-pill btn btn-m mx-1">
+          <button
+            className="tag-bg rounded-pill btn btn-m mx-1"
+            onClick={onClickCourse}
+          >
             <b>{product.course}</b>
           </button>
-          <button className="tag-bg rounded-pill btn btn-m mx-1">
+          <button
+            className="tag-bg rounded-pill btn btn-m mx-1"
+            onClick={onClickCat}
+          >
             <b>{product.category}</b>
           </button>
           <button className="tag-bg rounded-pill btn btn-m mx-1">
