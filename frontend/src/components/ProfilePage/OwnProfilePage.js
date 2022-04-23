@@ -51,12 +51,12 @@ const OwnProfilePage = () => {
           <h5 className="card-title text-muted m-2 wrapper">
             <i className="fas fa-user wrapper"></i> @{users.username}
           </h5>
-          <div className="mx-2 wrapper">
+          {/* <div className="mx-2 wrapper">
             <Rating1
               rating={users.rating}
               numReview={` ${users.reviews} reviews`}
             />
-          </div>
+          </div> */}
 
           <br />
           {/* Names */}
