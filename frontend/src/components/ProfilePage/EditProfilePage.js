@@ -5,14 +5,12 @@ import { useState } from "react";
 import "./ProfilePage.css";
 import { Row, Col, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import Product from "./ProfilePageListing";
 import Rating1 from "../userStars/userStars";
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const EditProfilePage = () => {
-  const dispatch = useDispatch();
   const { user } = useContext(AuthContext);
   const username = user.username;
   const [users, setUser] = useState({});

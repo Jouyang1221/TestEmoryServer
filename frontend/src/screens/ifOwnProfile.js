@@ -7,9 +7,7 @@ import OwnProfilePage from "../components/ProfilePage/OwnProfilePage";
 import ProfilePage from "../components/ProfilePage/ProfilePage";
 
 const IfOwnProfile = () => {
-  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-  const username = user.username;
   const profUsername = useParams();
 
   if (user.username === profUsername.username) {

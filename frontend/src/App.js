@@ -18,6 +18,7 @@ import Messanger from "./screens/Messenger/Messanger";
 import OwnProfilePage from "./components/ProfilePage/OwnProfilePage";
 import { AuthContext } from "./context/AuthContext";
 import IfOwnProfile from "./screens/ifOwnProfile";
+import EditItem from "./components/ItemPage/editItem";
 
 // function App() {
 const App = () => {
@@ -60,6 +61,22 @@ const App = () => {
           </>
         }
       ></Route>
+      <Route
+        path="/product/:id/edit"
+        element={
+          <>
+            {user ? (
+              <>
+                <HeaderSignedIn />
+                <EditItem />
+              </>
+            ) : (
+              <LoginScreen />
+            )}
+          </>
+        }
+      ></Route>
+
       <Route
         path="/search/:key"
         element={

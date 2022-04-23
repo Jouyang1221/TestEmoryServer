@@ -10,7 +10,7 @@ const ProfilePic = ({ username }) => {
   useEffect(() => {
     const fetchuser = async () => {
       const { data } = await axios.get(`/api/users/${username}`);
-      setUser(data);
+      setUser(data[0]);
     };
     fetchuser();
   }, []);
